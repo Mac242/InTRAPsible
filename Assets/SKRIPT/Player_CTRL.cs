@@ -23,7 +23,7 @@ public class Player_CTRL : MonoBehaviour
     {
         _RB = GetComponent<Rigidbody2D>();
         Physics.gravity = Physics.gravity * gravityModifier;
-       
+        animator.SetBool("Trapped", false);
     }
     
 
@@ -33,7 +33,7 @@ public class Player_CTRL : MonoBehaviour
         {
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
-
+            animator.SetBool("Trapped", false);
             animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
         
 
@@ -84,6 +84,11 @@ public class Player_CTRL : MonoBehaviour
 
     {
         isOnGround = true;
+
+    if (PlayerIsTrapped)
+    {
+       animator.SetBool("Trapped", true);
+    }
+
     }
 }
-

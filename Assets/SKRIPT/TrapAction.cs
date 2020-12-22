@@ -8,12 +8,17 @@ public class TrapAction : MonoBehaviour
     public GameObject MarkerReset;
     public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
+    
+    
+    
+
 
     
     // Start is called before the first frame update
     void Start()
     {
         Player_CTRL = Player.GetComponent<Player_CTRL>();
+       
     }
     
 
@@ -21,6 +26,7 @@ public class TrapAction : MonoBehaviour
     {
         //Debug.Log(gameObject.name + " just hit " + hit.name);
         StartCoroutine(Trapped());
+      
     }
 
     private IEnumerator Trapped()
@@ -35,6 +41,8 @@ public class TrapAction : MonoBehaviour
             // Block Input
             // Play Trap Sound
             // Start Animation Trap
+            
+           
             Player_CTRL.PlayerIsTrapped = true;
             
             trapActivated = false;
@@ -50,7 +58,8 @@ public class TrapAction : MonoBehaviour
             // Start Animation of Character MoveBack (maybe wait until animation is finished)
             // Move Character to Reset Position defined
             TrapParticleSystem.Play();
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, MarkerReset.transform.position, 8.0f*Time.deltaTime);
+            
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, MarkerReset.transform.position, 8.0f * Time.deltaTime);
 
             if (Player.transform.position == MarkerReset.transform.position)
             {
@@ -68,9 +77,9 @@ public class TrapAction : MonoBehaviour
             // Stop Particle Effect
             // Resume Idle Animation Character
             // Unblock Input
+
             TrapParticleSystem.Stop();
             Player_CTRL.PlayerIsTrapped = false;
-            
             trapDefenseFinished = false;
             
             yield return null;
