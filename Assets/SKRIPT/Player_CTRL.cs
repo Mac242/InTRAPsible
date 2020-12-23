@@ -24,6 +24,7 @@ public class Player_CTRL : MonoBehaviour
         _RB = GetComponent<Rigidbody2D>();
         Physics.gravity = Physics.gravity * gravityModifier;
         animator.SetBool("Trapped", false);
+        
     }
     
 
@@ -41,6 +42,12 @@ public class Player_CTRL : MonoBehaviour
             {
                 _RB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 isOnGround = false;
+                animator.SetBool("Jump", true);
+            }
+
+            if (isOnGround)
+            {
+                animator.SetBool("Jump", false);
             }
         
             if (Input.GetKeyDown(KeyCode.DownArrow))
