@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player_CTRL : MonoBehaviour
 {
@@ -97,5 +99,19 @@ public class Player_CTRL : MonoBehaviour
        animator.SetBool("Trapped", true);
     }
 
+    }
+
+     //playAgainButton from the gameOverPanel
+    public void PlayAgain()
+    {
+        //restart the game
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    //quitButton from the GameOverPanel
+    public void Quit()
+    {
+        //close the window where the game is being played in 
+        Application.Quit();
     }
 }

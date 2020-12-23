@@ -9,24 +9,16 @@ public class TrapAction : MonoBehaviour
     public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
     
-    
-    
-
-
-    
     // Start is called before the first frame update
     void Start()
     {
-        Player_CTRL = Player.GetComponent<Player_CTRL>();
-       
+        Player_CTRL = Player.GetComponent<Player_CTRL>(); 
     }
-    
 
     private void OnTriggerEnter2D(Collider2D hit)
     {
         //Debug.Log(gameObject.name + " just hit " + hit.name);
         StartCoroutine(Trapped());
-      
     }
 
     private IEnumerator Trapped()
@@ -42,9 +34,7 @@ public class TrapAction : MonoBehaviour
             // Play Trap Sound
             // Start Animation Trap
             
-           
             Player_CTRL.PlayerIsTrapped = true;
-            
             trapActivated = false;
             trapDefenseLaunched = true;
             
@@ -59,7 +49,7 @@ public class TrapAction : MonoBehaviour
             // Move Character to Reset Position defined
             TrapParticleSystem.Play();
             
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, MarkerReset.transform.position, 8.0f * Time.deltaTime);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, MarkerReset.transform.position, 10.0f * Time.deltaTime);
 
             if (Player.transform.position == MarkerReset.transform.position)
             {
