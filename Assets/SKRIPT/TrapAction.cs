@@ -6,13 +6,15 @@ public class TrapAction : MonoBehaviour
 {
     public GameObject Player;
     public GameObject MarkerReset;
-    public ParticleSystem TrapParticleSystem;
+    //public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
+    public GameObject Hit;
     
     // Start is called before the first frame update
     void Start()
     {
         Player_CTRL = Player.GetComponent<Player_CTRL>(); 
+        Hit.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D hit)
@@ -47,9 +49,10 @@ public class TrapAction : MonoBehaviour
             // Start Particle Effect
             // Start Animation of Character MoveBack (maybe wait until animation is finished)
             // Move Character to Reset Position defined
-            TrapParticleSystem.Play();
+            //TrapParticleSystem.Play();
+            Hit.SetActive(true);
             
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, MarkerReset.transform.position, 10.0f * Time.deltaTime);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, MarkerReset.transform.position, 12.0f * Time.deltaTime);
 
             if (Player.transform.position == MarkerReset.transform.position)
             {
@@ -62,15 +65,14 @@ public class TrapAction : MonoBehaviour
 
         while (trapDefenseFinished)
         {
-            //Debug.Log("Trap Defense Finished");
             // After arrive on Reset Position
             // Stop Particle Effect
             // Resume Idle Animation Character
             // Unblock Input
-
-            TrapParticleSystem.Stop();
             Player_CTRL.PlayerIsTrapped = false;
             trapDefenseFinished = false;
+            //TrapParticleSystem.Stop();
+            Hit.SetActive(false);
             
             yield return null;
         }
