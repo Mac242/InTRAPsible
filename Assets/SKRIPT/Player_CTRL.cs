@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player_CTRL : MonoBehaviour
 {
     public float speed = 2f; 
+    public float Crouchspeed = -1f; 
     private float horizontalInput; 
     private float verticalInput; 
     private Rigidbody2D _RB;
@@ -18,6 +19,7 @@ public class Player_CTRL : MonoBehaviour
     public Animator animator;
     private bool facingRight = true;
     public bool PlayerIsTrapped = true;
+    public GameObject WINPanel;
     
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class Player_CTRL : MonoBehaviour
         _RB = GetComponent<Rigidbody2D>();
         Physics.gravity = Physics.gravity * gravityModifier;
         animator.SetBool("Trapped", false);
+        WINPanel.SetActive(false);
         
     }
     
@@ -66,6 +69,11 @@ public class Player_CTRL : MonoBehaviour
             animator.SetBool("crouch", false);
             }
         }
+
+        if(Crouch)
+            {
+                transform.Translate(Vector2.right * Time.deltaTime * Crouchspeed * horizontalInput);
+            }
     }
 
     void FixedUpdate()
@@ -91,27 +99,43 @@ public class Player_CTRL : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
 
-    {
-        isOnGround = true;
+    {   isOnGround = true;
 
-    if (PlayerIsTrapped)
-    {
-       animator.SetBool("Trapped", true);
+        if (PlayerIsTrapped)
+            {
+            animator.SetBool("Trapped", true);
+            }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag ("Finish"))
+            {
+             WIN();
+            }
     }
 
-     //playAgainButton from the gameOverPanel
+    void WIN()
+    {
+        //Make player disappear and be disabled
+        gameObject.SetActive(false);
+
+        //turn on WINPAnel
+        WINPanel.SetActive(true);
+    }
+
+        //playAgainButton from the WINPanel
     public void PlayAgain()
     {
         //restart the game
         SceneManager.LoadScene("SampleScene");
     }
 
-    //quitButton from the GameOverPanel
+        //quitButton from the GameOverPanel
     public void Quit()
     {
         //close the window where the game is being played in 
         Application.Quit();
     }
+    
 }
