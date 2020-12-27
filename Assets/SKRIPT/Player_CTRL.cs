@@ -62,7 +62,7 @@ public class Player_CTRL : MonoBehaviour
                 animator.SetBool("crouch", true);
             } 
         
-            else if (Input.GetKeyUp(KeyCode.DownArrow))
+            if (Input.GetKeyUp(KeyCode.DownArrow))
             {
             Crouch = false;
 			m_CrouchDisableCollider.enabled = true;
