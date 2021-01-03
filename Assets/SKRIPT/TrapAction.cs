@@ -52,7 +52,7 @@ public class TrapAction : MonoBehaviour
             //TrapParticleSystem.Play();
             Hit.SetActive(true);
             
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, MarkerReset.transform.position, 12.0f * Time.deltaTime);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, MarkerReset.transform.position, 10.0f * Time.deltaTime);
 
             if (Player.transform.position == MarkerReset.transform.position)
             {
