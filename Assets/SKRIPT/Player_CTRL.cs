@@ -20,16 +20,19 @@ public class Player_CTRL : MonoBehaviour
     private bool facingRight = true;
     public bool PlayerIsTrapped = true;
     public GameObject WINPanel;
+    public bool Trap_Light = false;
+    
     
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   //animator = gameObject.GetComponent<Animator>();
         _RB = GetComponent<Rigidbody2D>();
         Physics.gravity = Physics.gravity * gravityModifier;
         animator.SetBool("Trapped", false);
         WINPanel.SetActive(false);
-        
+        Cursor.visible = false;
+        Trap_Light = false;
     }
     
 
@@ -40,8 +43,12 @@ public class Player_CTRL : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
             animator.SetBool("Trapped", false);
+            animator.SetBool("Trapped_Light", false);
             animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
-        
+            Trap_Light = false;
+            //animator.ResetTrigger("TrapLightning");
+            //animator.ResetTrigger("TrapSteam");
+            
 
             if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
             {
@@ -101,14 +108,30 @@ public class Player_CTRL : MonoBehaviour
 
     {   isOnGround = true;
 
-        if (PlayerIsTrapped)
+          if (PlayerIsTrapped)
             {
             animator.SetBool("Trapped", true);
+            Crouch = false;
+			m_CrouchDisableCollider.enabled = true;
+            animator.SetBool("crouch", false);
             }
+
+
+         if(Trap_Light==true)
+        {
+            animator.SetBool("Trapped_Light", true);
+        }        
     }
 
+    
+
     void OnTriggerEnter2D(Collider2D other)
-    {
+    {   
+       if(other.CompareTag("TrapLightning"))
+        {
+            Trap_Light = true;
+        }
+
         if(other.CompareTag ("Finish"))
             {
              WIN();
@@ -117,8 +140,10 @@ public class Player_CTRL : MonoBehaviour
 
     void WIN()
     {
+        Cursor.visible = true;
         //Make player disappear and be disabled
         gameObject.SetActive(false);
+        
 
         //turn on WINPAnel
         WINPanel.SetActive(true);
@@ -127,6 +152,7 @@ public class Player_CTRL : MonoBehaviour
         //playAgainButton from the WINPanel
     public void PlayAgain()
     {
+        Cursor.visible = true;
         //restart the game
         SceneManager.LoadScene("SampleScene");
     }

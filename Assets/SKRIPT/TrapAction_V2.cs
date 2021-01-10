@@ -9,7 +9,8 @@ public class TrapAction_V2 : MonoBehaviour
     //public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
     public GameObject Hit;
-
+    
+    
     //booleans
     bool trapActivatedb = false;
     bool trapDefenseLaunchedb = false;
@@ -18,11 +19,11 @@ public class TrapAction_V2 : MonoBehaviour
     //Variables for function
     float trapActivatedTimer = -0.5f;
     float trapDefenseLaunchedTimer = -0.5f;
-    float trapDefenseFinishedTimer = 2.0f;
+    float trapDefenseFinishedTimer = 1.0f;
     
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         Player_CTRL = Player.GetComponent<Player_CTRL>(); 
         Hit.SetActive(false);
     }
@@ -32,6 +33,7 @@ public class TrapAction_V2 : MonoBehaviour
         //Debug.Log(gameObject.name + " just hit " + hit.name);
         //StartCoroutine(Trapped());
         trapActivatedb = true;
+       
     }
 
     void Update(){
@@ -44,7 +46,9 @@ public class TrapAction_V2 : MonoBehaviour
         //Debug.Log("ta:"+trapActivatedTimer);
         if(trapActivatedTimer > 0.0f){
             trapActivatedTimer -= Time.deltaTime;
-        }else{
+        }
+        else
+        {
             Player_CTRL.PlayerIsTrapped = true;
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
@@ -59,6 +63,7 @@ void trapDefenseLaunched()
             //Debug.Log("Trap Defense Launched");
             // Start Particle Effect
             // Start Animation of Character MoveBack (maybe wait until animation is finished)
+            
             // Move Character to Reset Position defined
            // TrapParticleSystem.Play();
             Hit.SetActive(true);
@@ -101,7 +106,3 @@ void trapDefenseFinished()
         }
     }
 }
-
-    
-
-
