@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapAction_V2 : MonoBehaviour
+public class TrapAction_STEAM : MonoBehaviour
 {
     public GameObject Player;
     public GameObject MarkerReset;
-    //public ParticleSystem TrapParticleSystem;
+    public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
-    public GameObject Hit;
+    //public GameObject Hit;
     
     
     //booleans
@@ -25,7 +25,7 @@ public class TrapAction_V2 : MonoBehaviour
     void Start()
     {   
         Player_CTRL = Player.GetComponent<Player_CTRL>(); 
-        Hit.SetActive(false);
+        //Hit.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D hit)
@@ -65,8 +65,8 @@ void trapDefenseLaunched()
             // Start Animation of Character MoveBack (maybe wait until animation is finished)
 
             // Move Character to Reset Position defined
-           // TrapParticleSystem.Play();
-            Hit.SetActive(true);
+            TrapParticleSystem.Play();
+            //Hit.SetActive(true);
 
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
@@ -92,8 +92,8 @@ void trapDefenseFinished()
             Player_CTRL.PlayerIsTrapped = false;
             //Player_CTRL.TrappedLight = false;
             trapDefenseFinishedb = false;
-            //TrapParticleSystem.Stop();
-            Hit.SetActive(false);
+            TrapParticleSystem.Stop();
+            //Hit.SetActive(false);
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;

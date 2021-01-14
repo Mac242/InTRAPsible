@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - TrapSteam
-  - TrapLightning
-  - TrapLeverage
+  - TrapLight
+  - TrapFist
+  - TrapOil
   layers:
   - Default
   - TransparentFX

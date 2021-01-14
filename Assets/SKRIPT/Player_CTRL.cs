@@ -20,7 +20,10 @@ public class Player_CTRL : MonoBehaviour
     private bool facingRight = true;
     public bool PlayerIsTrapped = true;
     public GameObject WINPanel;
-    public bool Trap_Light = false;
+    public bool TrappedLight = true;
+    public bool TrappedFist = true;
+    public bool TrappedOil = true;
+
     
     
 
@@ -32,7 +35,9 @@ public class Player_CTRL : MonoBehaviour
         animator.SetBool("Trapped", false);
         WINPanel.SetActive(false);
         Cursor.visible = false;
-        Trap_Light = false;
+        TrappedLight = false;
+        TrappedFist = false;
+        TrappedOil = false;
     }
     
 
@@ -44,8 +49,12 @@ public class Player_CTRL : MonoBehaviour
             transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
             animator.SetBool("Trapped", false);
             animator.SetBool("Trapped_Light", false);
+            animator.SetBool("Trapped_Fist", false);
+            animator.SetBool("Trapped_Oil", false);
             animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
-            Trap_Light = false;
+            TrappedLight = false;
+            TrappedFist = false;
+            TrappedOil = false;
             //animator.ResetTrigger("TrapLightning");
             //animator.ResetTrigger("TrapSteam");
             
@@ -81,6 +90,31 @@ public class Player_CTRL : MonoBehaviour
             {
                 transform.Translate(Vector2.right * Time.deltaTime * Crouchspeed * horizontalInput);
             }
+
+        if(PlayerIsTrapped)
+            {
+            animator.SetBool("Trapped", true);
+            Crouch = false;
+			m_CrouchDisableCollider.enabled = true;
+            animator.SetBool("crouch", false);
+            }  
+            
+         if (PlayerIsTrapped && TrappedLight==true)
+            {
+                animator.SetBool("Trapped_Light", true);   
+                 
+            }
+        
+        if (PlayerIsTrapped && TrappedFist==true)
+            {
+                animator.SetBool("Trapped_Fist", true);   
+            }
+
+        if (PlayerIsTrapped && TrappedOil==true)
+            {
+                animator.SetBool("Trapped_Oil", true);   
+            }
+    
     }
 
     void FixedUpdate()
@@ -107,38 +141,33 @@ public class Player_CTRL : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
 
     {   isOnGround = true;
-
-          if (PlayerIsTrapped)
-            {
-            animator.SetBool("Trapped", true);
-            Crouch = false;
-			m_CrouchDisableCollider.enabled = true;
-            animator.SetBool("crouch", false);
-            }
-
-
-         if(Trap_Light==true)
+        
+        if(this.CompareTag("TrapLight"))
         {
-            animator.SetBool("Trapped_Light", true);
-        }        
+            TrappedLight = true;
+        }
+
+        if(this.CompareTag("TrapFist"))
+        {
+            TrappedFist = true;
+        }
+
+        if(this.CompareTag("TrapOil"))
+        {
+            TrappedOil = true;
+        }
     }
 
-    
 
     void OnTriggerEnter2D(Collider2D other)
     {   
-       if(other.CompareTag("TrapLightning"))
-        {
-            Trap_Light = true;
-        }
-
         if(other.CompareTag ("Finish"))
             {
              WIN();
             }
     }
 
-    void WIN()
+    public void WIN()
     {
         Cursor.visible = true;
         //Make player disappear and be disabled
@@ -147,6 +176,7 @@ public class Player_CTRL : MonoBehaviour
 
         //turn on WINPAnel
         WINPanel.SetActive(true);
+
     }
 
         //playAgainButton from the WINPanel

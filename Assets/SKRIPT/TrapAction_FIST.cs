@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapAction_V2 : MonoBehaviour
+public class TrapAction_FIST : MonoBehaviour
 {
     public GameObject Player;
     public GameObject MarkerReset;
@@ -48,8 +48,9 @@ public class TrapAction_V2 : MonoBehaviour
             trapActivatedTimer -= Time.deltaTime;
         }
         else
-        {  // Player_CTRL.TrappedLight = true;
+        {  
             Player_CTRL.PlayerIsTrapped = true;
+            Player_CTRL.TrappedFist = true;
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
         }
@@ -63,9 +64,9 @@ void trapDefenseLaunched()
             //Debug.Log("Trap Defense Launched");
             // Start Particle Effect
             // Start Animation of Character MoveBack (maybe wait until animation is finished)
-
+            Player_CTRL.TrappedFist = true;
             // Move Character to Reset Position defined
-           // TrapParticleSystem.Play();
+            //TrapParticleSystem.Play();
             Hit.SetActive(true);
 
             //if (Player.transform.position == MarkerReset.transform.position)
@@ -90,7 +91,7 @@ void trapDefenseFinished()
             // Resume Idle Animation Character
             // Unblock Input
             Player_CTRL.PlayerIsTrapped = false;
-            //Player_CTRL.TrappedLight = false;
+            Player_CTRL.TrappedFist = false;
             trapDefenseFinishedb = false;
             //TrapParticleSystem.Stop();
             Hit.SetActive(false);
