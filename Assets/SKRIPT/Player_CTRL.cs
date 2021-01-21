@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player_CTRL : MonoBehaviour
-{
+{   
     public float speed = 2f; 
     public float Crouchspeed = -1f; 
     private float horizontalInput; 
@@ -23,14 +23,21 @@ public class Player_CTRL : MonoBehaviour
     public bool TrappedLight = true;
     public bool TrappedFist = true;
     public bool TrappedOil = true;
+    public AudioClip walkSound;
+    public AudioClip crouchSound;
+    public AudioSource _audioSource;
+    //public AudioSource _audioSourceCrouch;
+    
+    
+    
 
-    
-    
+
 
     // Start is called before the first frame update
     void Start()
     {   //animator = gameObject.GetComponent<Animator>();
         _RB = GetComponent<Rigidbody2D>();
+        
         Physics.gravity = Physics.gravity * gravityModifier;
         animator.SetBool("Trapped", false);
         WINPanel.SetActive(false);
@@ -38,13 +45,17 @@ public class Player_CTRL : MonoBehaviour
         TrappedLight = false;
         TrappedFist = false;
         TrappedOil = false;
+        //_audioSource = GetComponent<AudioSource>();
+        //_audioSourceCrouch = GetComponent<AudioSource>();
+       
+        
     }
     
 
     void Update()
     {       
         if (!PlayerIsTrapped)
-        {
+        {   
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
             animator.SetBool("Trapped", false);
@@ -55,23 +66,27 @@ public class Player_CTRL : MonoBehaviour
             TrappedLight = false;
             TrappedFist = false;
             TrappedOil = false;
+            
             //animator.ResetTrigger("TrapLightning");
             //animator.ResetTrigger("TrapSteam");
+           
             
-
-            if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+            if (Input.GetKey(KeyCode.Space) && isOnGround)
             {
                 _RB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 isOnGround = false;
                 animator.SetBool("Jump", true);
+                
+                
             }
 
             if (isOnGround)
             {
                 animator.SetBool("Jump", false);
+                
             }
         
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.DownArrow))
             {
                 Crouch = true;
 			    m_CrouchDisableCollider.enabled = false;
@@ -89,7 +104,17 @@ public class Player_CTRL : MonoBehaviour
         if(Crouch)
             {
                 transform.Translate(Vector2.right * Time.deltaTime * Crouchspeed * horizontalInput);
+                _audioSource.Stop();
             }
+
+       /* if (Crouch==true && horizontalInput != 0)
+        {
+            _audioSourceCrouch.Play();
+           // _audioSource.Stop();
+        }
+        
+        */
+        
 
         if(PlayerIsTrapped)
             {
@@ -114,7 +139,27 @@ public class Player_CTRL : MonoBehaviour
             {
                 animator.SetBool("Trapped_Oil", true);   
             }
-    
+
+       if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                _audioSource.Play();
+            }
+       if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                _audioSource.Stop();
+            }
+           
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                _audioSource.Play();
+            }
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+            {
+                _audioSource.Stop();
+            }
+       
+           
     }
 
     void FixedUpdate()
@@ -127,6 +172,7 @@ public class Player_CTRL : MonoBehaviour
         {
 			Flip();
         }
+
 	}
 
 	void Flip()
@@ -145,6 +191,7 @@ public class Player_CTRL : MonoBehaviour
         if(this.CompareTag("TrapLight"))
         {
             TrappedLight = true;
+            
         }
 
         if(this.CompareTag("TrapFist"))
@@ -164,14 +211,17 @@ public class Player_CTRL : MonoBehaviour
         if(other.CompareTag ("Finish"))
             {
              WIN();
+            
             }
     }
 
     public void WIN()
-    {
+    {   
+        
         Cursor.visible = true;
         //Make player disappear and be disabled
         gameObject.SetActive(false);
+        
         
 
         //turn on WINPAnel
@@ -185,6 +235,7 @@ public class Player_CTRL : MonoBehaviour
         Cursor.visible = true;
         //restart the game
         SceneManager.LoadScene("SampleScene");
+        
     }
 
         //quitButton from the GameOverPanel

@@ -9,6 +9,10 @@ public class TrapAction_FIST : MonoBehaviour
     //public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
     public GameObject Hit;
+    public AudioClip hitSwing;
+    public AudioClip hitUff;
+    public AudioSource _audioSource;
+    public AudioSource _audioSource2;
     
     
     //booleans
@@ -53,6 +57,8 @@ public class TrapAction_FIST : MonoBehaviour
             Player_CTRL.TrappedFist = true;
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
+            _audioSource.Play();
+            _audioSource2.Play();
         }
     }
 
@@ -98,6 +104,8 @@ void trapDefenseFinished()
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
+            _audioSource.Stop();
+            _audioSource2.Stop();
         }
         else
         {

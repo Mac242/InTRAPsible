@@ -9,7 +9,9 @@ public class TrapAction_LIGHT : MonoBehaviour
     public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
     public GameObject Hit;
-    
+    public AudioClip lightTrapSound;
+    public AudioSource _audioSource;
+  
     
     //booleans
     bool trapActivatedb = false;
@@ -33,6 +35,7 @@ public class TrapAction_LIGHT : MonoBehaviour
         //Debug.Log(gameObject.name + " just hit " + hit.name);
         //StartCoroutine(Trapped());
         trapActivatedb = true;
+        
        
     }
 
@@ -52,6 +55,7 @@ public class TrapAction_LIGHT : MonoBehaviour
             Player_CTRL.PlayerIsTrapped = true;
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
+            _audioSource.Play();
         }
     }
 
@@ -67,6 +71,7 @@ void trapDefenseLaunched()
             // Move Character to Reset Position defined
             TrapParticleSystem.Play();
             Hit.SetActive(true);
+          
 
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
@@ -97,6 +102,7 @@ void trapDefenseFinished()
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
+            _audioSource.Stop();
         }
         else
         {
