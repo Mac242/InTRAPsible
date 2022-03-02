@@ -11,7 +11,6 @@ public class TrapAction_STEAM : MonoBehaviour
     public AudioSource _audioSource;
     //public GameObject Hit;
     
-    
     //booleans
     bool trapActivatedb = false;
     bool trapDefenseLaunchedb = false;

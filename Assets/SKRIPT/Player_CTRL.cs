@@ -27,22 +27,17 @@ public class Player_CTRL : MonoBehaviour
     public AudioClip walkSound;
     public AudioClip crouchSound;
     public AudioSource _audioSource;
-    //public AudioSource _audioSourceCrouch;
+    //Time
     public float time;
     public Text timeText;
     private float minutes;
     private float seconds;
     public TextMeshProUGUI winTime;
-    
-    
-
-
 
     // Start is called before the first frame update
     void Start()
-    {   //animator = gameObject.GetComponent<Animator>();
+    {   
         _RB = GetComponent<Rigidbody2D>();
-        
         Physics.gravity = Physics.gravity * gravityModifier;
         animator.SetBool("Trapped", false);
         WINPanel.SetActive(false);
@@ -50,10 +45,6 @@ public class Player_CTRL : MonoBehaviour
         TrappedLight = false;
         TrappedFist = false;
         TrappedOil = false;
-        //_audioSource = GetComponent<AudioSource>();
-        //_audioSourceCrouch = GetComponent<AudioSource>();
-       
-        
     }
     
 
@@ -74,23 +65,16 @@ public class Player_CTRL : MonoBehaviour
             TrappedFist = false;
             TrappedOil = false;
             
-            //animator.ResetTrigger("TrapLightning");
-            //animator.ResetTrigger("TrapSteam");
-           
-            
             if (Input.GetKey(KeyCode.Space) && isOnGround)
             {
                 _RB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 isOnGround = false;
                 animator.SetBool("Jump", true);
-                
-                
             }
 
             if (isOnGround)
             {
                 animator.SetBool("Jump", false);
-                
             }
         
             if (Input.GetKey(KeyCode.DownArrow))
@@ -102,73 +86,59 @@ public class Player_CTRL : MonoBehaviour
         
             if (Input.GetKeyUp(KeyCode.DownArrow))
             {
-            Crouch = false;
-			m_CrouchDisableCollider.enabled = true;
-            animator.SetBool("crouch", false);
+                Crouch = false;
+                m_CrouchDisableCollider.enabled = true;
+                animator.SetBool("crouch", false);
             }
         }
 
         if(Crouch)
-            {
-                transform.Translate(Vector2.right * Time.deltaTime * Crouchspeed * horizontalInput);
-                _audioSource.Stop();
-            }
-
-       /* if (Crouch==true && horizontalInput != 0)
         {
-            _audioSourceCrouch.Play();
-           // _audioSource.Stop();
+            transform.Translate(Vector2.right * Time.deltaTime * Crouchspeed * horizontalInput);
+            _audioSource.Stop();
         }
         
-        */
-        
-
         if(PlayerIsTrapped)
-            {
+        {
             animator.SetBool("Trapped", true);
             Crouch = false;
-			m_CrouchDisableCollider.enabled = true;
+            m_CrouchDisableCollider.enabled = true;
             animator.SetBool("crouch", false);
-            }  
+        }  
             
-         if (PlayerIsTrapped && TrappedLight==true)
-            {
-                animator.SetBool("Trapped_Light", true);   
-                 
-            }
+        if (PlayerIsTrapped && TrappedLight==true)
+        {
+            animator.SetBool("Trapped_Light", true);
+        }
         
         if (PlayerIsTrapped && TrappedFist==true)
-            {
-                animator.SetBool("Trapped_Fist", true);   
-            }
+        {
+            animator.SetBool("Trapped_Fist", true);   
+        }
 
         if (PlayerIsTrapped && TrappedOil==true)
-            {
-                animator.SetBool("Trapped_Oil", true);   
-            }
+        {
+            animator.SetBool("Trapped_Oil", true);   
+        }
 
-       if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                _audioSource.Play();
-            }
-       if (Input.GetKeyUp(KeyCode.RightArrow))
-            {
-                _audioSource.Stop();
-            }
-           
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            _audioSource.Play();
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            _audioSource.Stop();
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                _audioSource.Play();
-            }
+        {
+            _audioSource.Play();
+        }
         if (Input.GetKeyUp(KeyCode.LeftArrow))
-            {
-                _audioSource.Stop();
-            }
-       
-           
+        {
+            _audioSource.Stop();
+        }
     }
-
     void FixedUpdate()
     {
         if (facingRight == false && horizontalInput > 0)
@@ -179,18 +149,14 @@ public class Player_CTRL : MonoBehaviour
         {
 			Flip();
         }
-
-	}
-
-	void Flip()
+    }
+    void Flip()
     {
 		facingRight = !facingRight;
 		Vector3 Scaler = transform.localScale;
 		Scaler.x *= -1;
 		transform.localScale = Scaler;
-
     }
-    
     private void OnCollisionEnter2D(Collision2D collision)
 
     {   isOnGround = true;
@@ -198,7 +164,6 @@ public class Player_CTRL : MonoBehaviour
         if(this.CompareTag("TrapLight"))
         {
             TrappedLight = true;
-            
         }
 
         if(this.CompareTag("TrapFist"))
@@ -211,18 +176,13 @@ public class Player_CTRL : MonoBehaviour
             TrappedOil = true;
         }
     }
-
-
     void OnTriggerEnter2D(Collider2D other)
     {   
         if(other.CompareTag ("Finish"))
-            {
-             WIN();
-            
-            }
+        {
+            WIN();
+        }
     }
-
-    
     void DisplayTime()
     {
         time += Time.deltaTime;
@@ -231,8 +191,7 @@ public class Player_CTRL : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
     public void WIN()
-    {   
-        
+    {
         Cursor.visible = true;
         //Make player disappear and be disabled
         gameObject.SetActive(false);
@@ -250,10 +209,8 @@ public class Player_CTRL : MonoBehaviour
             winTime.text = "You are Bronze " + time;
         }
         
-
         //turn on WINPAnel
         WINPanel.SetActive(true);
-
     }
 
         //playAgainButton from the WINPanel
@@ -262,7 +219,6 @@ public class Player_CTRL : MonoBehaviour
         Cursor.visible = true;
         //restart the game
         SceneManager.LoadScene("SampleScene");
-        
     }
 
         //quitButton from the GameOverPanel
