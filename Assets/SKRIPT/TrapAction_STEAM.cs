@@ -8,10 +8,7 @@ public class TrapAction_STEAM : MonoBehaviour
     public GameObject MarkerReset;
     public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
-    public AudioClip steamTrapSound;
-    public AudioClip steamTrapSound2;
     public AudioSource _audioSource;
-    public AudioSource _audioSource2;
     //public GameObject Hit;
     
     
@@ -57,7 +54,7 @@ public class TrapAction_STEAM : MonoBehaviour
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
             _audioSource.Play();
-            _audioSource2.Play();
+            
         }
     }
 
@@ -104,7 +101,6 @@ void trapDefenseFinished()
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
             _audioSource.Stop();
-            _audioSource2.Stop();
         }
         else
         {

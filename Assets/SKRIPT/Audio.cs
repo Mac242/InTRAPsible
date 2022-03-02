@@ -9,17 +9,13 @@ public class Audio : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip Atmo;
     
-    public AudioSource _audioSource1;
-    public AudioSource _audioSource3;
+    
    
 
     // Start is called before the first frame update
     void Start()
     {
-        _audioSource1.Play();
-        _audioSource3.Play();
         
-    
     }
 
     // Update is called once per frame

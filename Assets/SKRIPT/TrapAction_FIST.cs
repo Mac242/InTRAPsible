@@ -12,7 +12,7 @@ public class TrapAction_FIST : MonoBehaviour
     public AudioClip hitSwing;
     public AudioClip hitUff;
     public AudioSource _audioSource;
-    public AudioSource _audioSource2;
+    
     
     
     //booleans
@@ -58,7 +58,6 @@ public class TrapAction_FIST : MonoBehaviour
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
             _audioSource.Play();
-            _audioSource2.Play();
         }
     }
 
@@ -105,7 +104,7 @@ void trapDefenseFinished()
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
             _audioSource.Stop();
-            _audioSource2.Stop();
+            
         }
         else
         {

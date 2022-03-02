@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -27,7 +28,11 @@ public class Player_CTRL : MonoBehaviour
     public AudioClip crouchSound;
     public AudioSource _audioSource;
     //public AudioSource _audioSourceCrouch;
-    
+    public float time;
+    public Text timeText;
+    private float minutes;
+    private float seconds;
+    public TextMeshProUGUI winTime;
     
     
 
@@ -54,6 +59,8 @@ public class Player_CTRL : MonoBehaviour
 
     void Update()
     {       
+        DisplayTime();
+        
         if (!PlayerIsTrapped)
         {   
             horizontalInput = Input.GetAxis("Horizontal");
@@ -215,13 +222,33 @@ public class Player_CTRL : MonoBehaviour
             }
     }
 
+    
+    void DisplayTime()
+    {
+        time += Time.deltaTime;
+        float minutes = Mathf.FloorToInt(time / 60);
+        float seconds = Mathf.FloorToInt(time % 60);
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
     public void WIN()
     {   
         
         Cursor.visible = true;
         //Make player disappear and be disabled
         gameObject.SetActive(false);
-        
+
+        if (time < 36)
+        {
+            winTime.text = "You are Gold " + time;
+        }
+        else if (time < 60)
+        {
+            winTime.text = "You are Silver " + time;
+        }
+        else if (time >= 60)
+        {
+            winTime.text = "You are Bronze " + time;
+        }
         
 
         //turn on WINPAnel
