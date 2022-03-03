@@ -13,6 +13,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@10.7.0/Editor/UpgradeCommon.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="25pYyzJ2M8YFE69Dx4nikgiIRzR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -56,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646225756470</updated>
-      <workItem from="1646225757882" duration="6060000" />
+      <workItem from="1646225757882" duration="6844000" />
     </task>
     <servers />
   </component>
