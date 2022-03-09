@@ -8,6 +8,7 @@ TagManager:
   - TrapLight
   - TrapFist
   - TrapOil
+  - Light
   layers:
   - Default
   - TransparentFX
