@@ -15,7 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/LightAction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/detectLight.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/LightFlickering.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@10.7.0/Editor/UpgradeCommon.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25pYyzJ2M8YFE69Dx4nikgiIRzR" />
@@ -61,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646225756470</updated>
-      <workItem from="1646225757882" duration="21710000" />
+      <workItem from="1646225757882" duration="25637000" />
     </task>
     <servers />
   </component>

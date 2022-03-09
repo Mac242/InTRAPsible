@@ -65,7 +65,7 @@
      <Compile Include="Assets\SKRIPT\CameraBehavior.cs" />
      <Compile Include="Assets\SKRIPT\TrapAction.cs" />
      <Compile Include="Assets\SKRIPT\LightAction.cs" />
-     <Compile Include="Assets\SKRIPT\detectLight.cs" />
+     <Compile Include="Assets\SKRIPT\LightFlickering.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
