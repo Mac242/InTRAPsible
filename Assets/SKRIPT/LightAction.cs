@@ -11,7 +11,7 @@ public class LightAction : MonoBehaviour
 
     //public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_Ctrl;
-    //public GameObject Hit;
+    public GameObject Hit;
     
     //booleans
     private bool trapActivatedb = false;
@@ -31,7 +31,7 @@ public class LightAction : MonoBehaviour
     void Start()
     {
         Player_Ctrl = player.GetComponent<Player_CTRL>();
-        //Hit.SetActive(false);
+        Hit.SetActive(false);
         //triggersIn = 0;
     }
   
@@ -104,7 +104,7 @@ public class LightAction : MonoBehaviour
 
             // Move Character to Reset Position defined
             // TrapParticleSystem.Play();
-            //Hit.SetActive(true);
+            Hit.SetActive(true);
 
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
@@ -131,7 +131,7 @@ public class LightAction : MonoBehaviour
             //Player_CTRL.TrappedLight = false;
             trapDefenseFinishedb = false;
             //TrapParticleSystem.Stop();
-            //Hit.SetActive(false);
+            Hit.SetActive(false);
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
