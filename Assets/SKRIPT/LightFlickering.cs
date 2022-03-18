@@ -9,6 +9,7 @@ public class LightFlickering : MonoBehaviour
     [SerializeField] float flickering;
     [SerializeField] float interval;
     [SerializeField] private float delay;
+    [SerializeField] private float flickeringTime;
     
     // Start is called before the first frame update
     void Start()
@@ -29,12 +30,11 @@ public class LightFlickering : MonoBehaviour
 
             if (flickering <= 0 && interval <= 0)
             {
-                flickering = 3.5f ;
+                flickering = flickeringTime;
                 interval = 0.25f;
                 lightFlicker.SetActive(true);
             }
         }
-        
     }
 
     void Flickering()
@@ -50,7 +50,6 @@ public class LightFlickering : MonoBehaviour
     {
         interval -= Time.deltaTime;
         Debug.Log(interval);
-        
     }
    
 }

@@ -153,9 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightFlicker: {fileID: 1174633550}
-  flickering: 1
+  flickering: 0.5
   interval: 0.1
   delay: 1.25
+  flickeringTime: 1.5
 --- !u!4 &19754099
 Transform:
   m_ObjectHideFlags: 0
@@ -675,7 +676,8 @@ MonoBehaviour:
   lightFlicker: {fileID: 131249384}
   flickering: 1
   interval: 0.1
-  delay: 0.5
+  delay: 0.25
+  flickeringTime: 3
 --- !u!4 &290958586
 Transform:
   m_ObjectHideFlags: 0
@@ -958,7 +960,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 752543969}
-  - component: {fileID: 752543968}
   m_Layer: 0
   m_Name: Flickering (2)
   m_TagString: Light
@@ -966,22 +967,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &752543968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752543967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23b84060c80a64d2780a27f36a663fce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightFlicker: {fileID: 866614242}
-  flickering: 1
-  interval: 0.1
-  delay: 1
 --- !u!4 &752543969
 Transform:
   m_ObjectHideFlags: 0
@@ -1444,7 +1429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1106373295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1695,6 +1680,7 @@ MonoBehaviour:
   flickering: 1
   interval: 0.1
   delay: 0.75
+  flickeringTime: 3
 --- !u!4 &1273004411
 Transform:
   m_ObjectHideFlags: 0
@@ -1837,7 +1823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1555426467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,7 +1949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1691154414
 BoxCollider2D:
   m_ObjectHideFlags: 0

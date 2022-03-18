@@ -73,9 +73,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsdPlugin", "PsdPlugin.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Core.Editor", "Unity.RenderPipelines.Core.Editor.csproj", "{1fff8409-8dc7-987e-e9d5-c16a632d0970}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.IK.Editor", "Unity.2D.IK.Editor.csproj", "{12788774-c3f7-2915-511f-7f13da246ae6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Searcher.Editor", "Unity.Searcher.Editor.csproj", "{7de6be34-222c-472b-ee49-5c5aa0114568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.IK.Editor", "Unity.2D.IK.Editor.csproj", "{12788774-c3f7-2915-511f-7f13da246ae6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Psdimporter.Editor", "Unity.2D.Psdimporter.Editor.csproj", "{41a8fbe1-6693-3cc3-9c98-d9fbf794aec3}"
 EndProject
@@ -249,14 +249,14 @@ Global
 		{1fff8409-8dc7-987e-e9d5-c16a632d0970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1fff8409-8dc7-987e-e9d5-c16a632d0970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1fff8409-8dc7-987e-e9d5-c16a632d0970}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12788774-c3f7-2915-511f-7f13da246ae6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12788774-c3f7-2915-511f-7f13da246ae6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12788774-c3f7-2915-511f-7f13da246ae6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12788774-c3f7-2915-511f-7f13da246ae6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7de6be34-222c-472b-ee49-5c5aa0114568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7de6be34-222c-472b-ee49-5c5aa0114568}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7de6be34-222c-472b-ee49-5c5aa0114568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7de6be34-222c-472b-ee49-5c5aa0114568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12788774-c3f7-2915-511f-7f13da246ae6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12788774-c3f7-2915-511f-7f13da246ae6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12788774-c3f7-2915-511f-7f13da246ae6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12788774-c3f7-2915-511f-7f13da246ae6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{41a8fbe1-6693-3cc3-9c98-d9fbf794aec3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{41a8fbe1-6693-3cc3-9c98-d9fbf794aec3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41a8fbe1-6693-3cc3-9c98-d9fbf794aec3}.Release|Any CPU.ActiveCfg = Release|Any CPU
