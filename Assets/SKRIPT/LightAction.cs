@@ -86,7 +86,7 @@ public class LightAction : MonoBehaviour
         }
         else
         {
-            Player_Ctrl.TrappedLight = true;
+           
             Player_Ctrl.PlayerIsTrapped = true;
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
