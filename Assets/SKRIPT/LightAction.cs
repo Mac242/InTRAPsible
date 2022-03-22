@@ -9,6 +9,7 @@ public class LightAction : MonoBehaviour
     public GameObject player;
     public GameObject markerReset;
 
+    public GameObject flashlight;
     //public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_Ctrl;
     public GameObject Hit;
@@ -17,15 +18,18 @@ public class LightAction : MonoBehaviour
     private bool trapActivatedb = false;
     private bool trapDefenseLaunchedb = false;
     private bool trapDefenseFinishedb = false;
+    public bool flashlightOn = false;
+    public bool inTheLight;
+    public bool exitTrigger;
     
     //Variables for function
     private float trapActivatedTimer = -0.5f;
     private float trapDefenseLaunchedTimer = -0.5f;
     private float trapDefenseFinishedTimer = 1.0f;
     
-    public bool inTheLight;
-    public bool exitTrigger;
+    
     public int triggersIn;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +37,8 @@ public class LightAction : MonoBehaviour
         Player_Ctrl = player.GetComponent<Player_CTRL>();
         Hit.SetActive(false);
         //triggersIn = 0;
+        flashlight.SetActive(false);
+        flashlightOn = false;
     }
   
     void Update()
@@ -45,6 +51,22 @@ public class LightAction : MonoBehaviour
         {
             trapActivatedb = true;
             Debug.Log("DARK");
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && flashlightOn==false)
+        {
+            flashlight.SetActive(true);
+            flashlightOn = true;
+            triggersIn += 1;
+            Debug.Log("E pressed");
+        }
+        
+        if (Input.GetKeyUp(KeyCode.E) && flashlightOn==true)
+        {
+            flashlight.SetActive(false);
+            flashlightOn = false;
+            triggersIn -= 1;
+            Debug.Log("unpressed E");
         }
         
     }
