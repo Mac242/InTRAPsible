@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 617c2f56e98044cb0acb064fa1b67f7f
+  - enabled: 1
+    path: Assets/Scenes/1_First Level_TubeScene.unity
+    guid: 6b3ddc6066ae64a6796aa57566980e26
   - enabled: 0
-    path: Assets/Scenes/SampleScene2.unity
+    path: 
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/2_SecondLevel.unity
+    guid: cc41f975ef6514b6280d802d937603be
   - enabled: 1
     path: Assets/Scenes/3_Third Level_BasementScene.unity
     guid: 9608ddb0e4daf48da90e2ba44d75bbac

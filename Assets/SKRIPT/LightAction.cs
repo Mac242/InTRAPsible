@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LightAction : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class LightAction : MonoBehaviour
     public GameObject markerReset;
 
     public GameObject flashlight;
+
+    public GameObject darkness;
     //public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_Ctrl;
     public GameObject Hit;
@@ -29,21 +33,31 @@ public class LightAction : MonoBehaviour
     
     
     public int triggersIn;
+
+    public int flashlightsNumber;
+    public TextMeshProUGUI flashlightsNumberText;
+    
     
 
     // Start is called before the first frame update
     void Start()
     {
         Player_Ctrl = player.GetComponent<Player_CTRL>();
+        
+        
         Hit.SetActive(false);
         //triggersIn = 0;
         flashlight.SetActive(false);
+        darkness.SetActive(true);
         flashlightOn = false;
     }
+    
   
     void Update()
     {
-        if (trapActivatedb) trapActivated();
+        flashlightsNumberText.text = "Lights:" + " " + flashlightsNumber;
+        
+        if (trapActivatedb==true) trapActivated();
         if (trapDefenseLaunchedb) trapDefenseLaunched();
         if (trapDefenseFinishedb) trapDefenseFinished();
         
@@ -53,22 +67,32 @@ public class LightAction : MonoBehaviour
             Debug.Log("DARK");
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && flashlightOn==false)
-        {
-            flashlight.SetActive(true);
-            flashlightOn = true;
-            triggersIn += 1;
-            Debug.Log("E pressed");
-        }
-        
-        if (Input.GetKeyUp(KeyCode.E) && flashlightOn==true)
+        if (flashlightsNumber == 0)
         {
             flashlight.SetActive(false);
-            flashlightOn = false;
-            triggersIn -= 1;
-            Debug.Log("unpressed E");
+            
         }
         
+        if (flashlightsNumber > 0)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && flashlightOn==false)
+            {
+                flashlight.SetActive(true);
+                flashlightOn = true;
+                darkness.SetActive(false);
+                triggersIn += 1;
+                Debug.Log("E pressed");
+            }
+        
+            if (Input.GetKeyUp(KeyCode.E) && flashlightOn==true)
+            {
+                flashlight.SetActive(false);
+                flashlightOn = false;
+                darkness.SetActive(true);
+                triggersIn -= 1;
+                Debug.Log("unpressed E");
+            }
+        }
     }
     
     public void OnTriggerExit2D(Collider2D other)
@@ -128,6 +152,8 @@ public class LightAction : MonoBehaviour
             // TrapParticleSystem.Play();
             Hit.SetActive(true);
 
+            
+
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
             trapDefenseLaunchedb = false;
@@ -157,6 +183,7 @@ public class LightAction : MonoBehaviour
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
+            
             
 
         }

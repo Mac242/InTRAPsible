@@ -34,6 +34,8 @@ public class Player_CTRL : MonoBehaviour
     private float seconds;
     public TextMeshProUGUI winTime;
 
+    private LightAction _lightAction;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -45,6 +47,8 @@ public class Player_CTRL : MonoBehaviour
         TrappedLight = false;
         TrappedFist = false;
         TrappedOil = false;
+        _lightAction = GetComponent<LightAction>();
+        Time.timeScale = 1;
     }
     
 
@@ -194,19 +198,22 @@ public class Player_CTRL : MonoBehaviour
     {
         Cursor.visible = true;
         //Make player disappear and be disabled
-        gameObject.SetActive(false);
+        Time.timeScale = 0;
 
         if (time < 36)
         {
             winTime.text = "You are Gold " + time;
+            _lightAction.flashlightsNumber += 3;
         }
         else if (time < 60)
         {
             winTime.text = "You are Silver " + time;
+            _lightAction.flashlightsNumber += 2;
         }
         else if (time >= 60)
         {
             winTime.text = "You are Bronze " + time;
+            _lightAction.flashlightsNumber += 1;
         }
         
         //turn on WINPAnel

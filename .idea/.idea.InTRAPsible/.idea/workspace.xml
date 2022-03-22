@@ -16,6 +16,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_STEAM.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_V2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/SceneChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/LightAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_OIL.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_FIST.cs" root0="FORCE_HIGHLIGHTING" />
@@ -73,7 +74,7 @@
       <workItem from="1646225757882" duration="26175000" />
       <workItem from="1646903946880" duration="653000" />
       <workItem from="1647505376785" duration="722000" />
-      <workItem from="1647600246172" duration="2466000" />
+      <workItem from="1647600246172" duration="11042000" />
     </task>
     <servers />
   </component>

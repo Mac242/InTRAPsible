@@ -20,12 +20,15 @@ public class TrapAction_V2 : MonoBehaviour
     float trapActivatedTimer = -0.5f;
     float trapDefenseLaunchedTimer = -0.5f;
     float trapDefenseFinishedTimer = 1.0f;
+
+    private LightAction _lightAction;
     
     // Start is called before the first frame update
     void Start()
     {   
         Player_CTRL = Player.GetComponent<Player_CTRL>(); 
         Hit.SetActive(false);
+        _lightAction = Player.GetComponent<LightAction>();
     }
 
     private void OnTriggerEnter2D(Collider2D hit)
@@ -97,6 +100,11 @@ void trapDefenseFinished()
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
+            
+            if (_lightAction.flashlightsNumber > 0 && _lightAction.flashlightOn==true)
+            {
+                _lightAction.flashlightsNumber -= 1;
+            }
         }
         else
         {
