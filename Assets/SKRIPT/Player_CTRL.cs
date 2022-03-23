@@ -200,20 +200,27 @@ public class Player_CTRL : MonoBehaviour
         //Make player disappear and be disabled
         Time.timeScale = 0;
 
-        if (time < 36)
+        if (time < 36f)
         {
-            winTime.text = "You are Gold " + time;
-            _lightAction.flashlightsNumber += 3;
+            float minutes = Mathf.FloorToInt(time / 60);
+            float seconds = Mathf.FloorToInt(time % 60);
+            winTime.text = "You are Gold " + string.Format("{0:00}:{1:00}", minutes , seconds);
+            //LightAction.flashlightsNumber += 3;
+            LightAction.batteriesLoad += 15f;
         }
-        else if (time < 60)
+        else if (time < 60f && time >= 36f)
         {
-            winTime.text = "You are Silver " + time;
-            _lightAction.flashlightsNumber += 2;
+            float minutes = Mathf.FloorToInt(time / 60);
+            float seconds = Mathf.FloorToInt(time % 60);
+            winTime.text = "You are Silver " + string.Format("{0:00}:{1:00}", minutes , seconds);
+            LightAction.batteriesLoad += 10f;
         }
-        else if (time >= 60)
+        else if (time >= 60f)
         {
-            winTime.text = "You are Bronze " + time;
-            _lightAction.flashlightsNumber += 1;
+            float minutes = Mathf.FloorToInt(time / 60);
+            float seconds = Mathf.FloorToInt(time % 60);
+            winTime.text = "You are Bronze " + string.Format("{0:00}:{1:00}", minutes , seconds);
+            LightAction.batteriesLoad += 5f;
         }
         
         //turn on WINPAnel

@@ -6,10 +6,10 @@ public class TrapAction_V2 : MonoBehaviour
 {
     public GameObject Player;
     public GameObject MarkerReset;
+    
     //public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
     public GameObject Hit;
-    
     
     //booleans
     bool trapActivatedb = false;
@@ -36,7 +36,6 @@ public class TrapAction_V2 : MonoBehaviour
         //Debug.Log(gameObject.name + " just hit " + hit.name);
         //StartCoroutine(Trapped());
         trapActivatedb = true;
-       
     }
 
     void Update(){
@@ -70,7 +69,19 @@ void trapDefenseLaunched()
             // Move Character to Reset Position defined
            // TrapParticleSystem.Play();
             Hit.SetActive(true);
+            
+            
+               /* if (LightAction.flashlightsNumber > 0 && _lightAction.flashlightOn==true)
+            {
+                LightAction.flashlightsNumber -= 1;
+            }
 
+            if (LightAction.flashlightsNumber == 0 && _lightAction.flashlightOn == true)
+            {
+                _lightAction.triggersIn -= 1;
+                _lightAction.flashlightOn = false;
+            }*/
+               
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
                 trapDefenseLaunchedb = false;
@@ -100,11 +111,6 @@ void trapDefenseFinished()
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
-            
-            if (_lightAction.flashlightsNumber > 0 && _lightAction.flashlightOn==true)
-            {
-                _lightAction.flashlightsNumber -= 1;
-            }
         }
         else
         {

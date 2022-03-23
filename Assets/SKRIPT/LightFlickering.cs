@@ -14,7 +14,6 @@ public class LightFlickering : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -42,14 +41,11 @@ public class LightFlickering : MonoBehaviour
         if (delay <= 0)
         {
             flickering -= Time.deltaTime;
-            Debug.Log(flickering);  
         }
     }
 
     void FlickeringInterval()
     {
         interval -= Time.deltaTime;
-        Debug.Log(interval);
     }
-   
 }

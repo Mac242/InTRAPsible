@@ -10,13 +10,10 @@ public class LightAction : MonoBehaviour
 {
     public GameObject player;
     public GameObject markerReset;
-
     public GameObject flashlight;
-
     public GameObject darkness;
-    //public ParticleSystem TrapParticleSystem;
-    private Player_CTRL Player_Ctrl;
     public GameObject Hit;
+    private Player_CTRL Player_Ctrl;
     
     //booleans
     private bool trapActivatedb = false;
@@ -31,31 +28,28 @@ public class LightAction : MonoBehaviour
     private float trapDefenseLaunchedTimer = -0.5f;
     private float trapDefenseFinishedTimer = 1.0f;
     
-    
     public int triggersIn;
 
-    public int flashlightsNumber;
+    public static int flashlightsNumber;
+    public static float batteriesLoad;
     public TextMeshProUGUI flashlightsNumberText;
+    public TextMeshProUGUI batteriesLoadedText;
     
-    
-
     // Start is called before the first frame update
     void Start()
     {
         Player_Ctrl = player.GetComponent<Player_CTRL>();
-        
-        
         Hit.SetActive(false);
         //triggersIn = 0;
         flashlight.SetActive(false);
         darkness.SetActive(true);
         flashlightOn = false;
     }
-    
-  
+
     void Update()
     {
-        flashlightsNumberText.text = "Lights:" + " " + flashlightsNumber;
+        //flashlightsNumberText.text = "Lights:" + " " + flashlightsNumber;
+        batteriesLoadedText.text = "Batterie" + " " + batteriesLoad;
         
         if (trapActivatedb==true) trapActivated();
         if (trapDefenseLaunchedb) trapDefenseLaunched();
@@ -67,13 +61,18 @@ public class LightAction : MonoBehaviour
             Debug.Log("DARK");
         }
 
-        if (flashlightsNumber == 0)
+        if (batteriesLoad <= 0 && flashlightOn==true)
+            //if (flashlightsNumber == 0)
         {
+            flashlightOn = false;
             flashlight.SetActive(false);
-            
+            darkness.SetActive(true);
+            batteriesLoad = 0;
+            triggersIn -= 1;
         }
         
-        if (flashlightsNumber > 0)
+        if (batteriesLoad > 0) 
+            //if (flashlightsNumber > 0)
         {
             if (Input.GetKeyDown(KeyCode.E) && flashlightOn==false)
             {
@@ -83,7 +82,9 @@ public class LightAction : MonoBehaviour
                 triggersIn += 1;
                 Debug.Log("E pressed");
             }
-        
+
+            
+            
             if (Input.GetKeyUp(KeyCode.E) && flashlightOn==true)
             {
                 flashlight.SetActive(false);
@@ -92,6 +93,11 @@ public class LightAction : MonoBehaviour
                 triggersIn -= 1;
                 Debug.Log("unpressed E");
             }
+        }
+        
+        if (flashlightOn==true && batteriesLoad > 0)
+        {
+            batteriesLoad -= Time.deltaTime;
         }
     }
     
@@ -107,7 +113,6 @@ public class LightAction : MonoBehaviour
         {
             exitTrigger = false;
         }
-        
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -132,7 +137,6 @@ public class LightAction : MonoBehaviour
         }
         else
         {
-           
             Player_Ctrl.PlayerIsTrapped = true;
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
@@ -147,13 +151,9 @@ public class LightAction : MonoBehaviour
             //Debug.Log("Trap Defense Launched");
             // Start Particle Effect
             // Start Animation of Character MoveBack (maybe wait until animation is finished)
-
             // Move Character to Reset Position defined
             // TrapParticleSystem.Play();
             Hit.SetActive(true);
-
-            
-
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
             trapDefenseLaunchedb = false;
@@ -183,9 +183,6 @@ public class LightAction : MonoBehaviour
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
-            
-            
-
         }
         else
         {
