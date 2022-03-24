@@ -30,7 +30,7 @@ public class LightAction : MonoBehaviour
     
     public int triggersIn;
 
-    public static int flashlightsNumber;
+    //public static int flashlightsNumber;
     public static float batteriesLoad;
     public TextMeshProUGUI flashlightsNumberText;
     public TextMeshProUGUI batteriesLoadedText;
