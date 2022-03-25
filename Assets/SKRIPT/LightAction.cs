@@ -9,10 +9,10 @@ using UnityEngine.SceneManagement;
 public class LightAction : MonoBehaviour
 {
     public GameObject player;
-    public GameObject markerReset;
+    public GameObject[] markerReset;
     public GameObject flashlight;
     public GameObject darkness;
-    public GameObject Hit;
+    //public GameObject Hit;
     private Player_CTRL Player_Ctrl;
     
     //booleans
@@ -32,14 +32,14 @@ public class LightAction : MonoBehaviour
 
     //public static int flashlightsNumber;
     public static float batteriesLoad;
-    public TextMeshProUGUI flashlightsNumberText;
+    //public TextMeshProUGUI flashlightsNumberText;
     public TextMeshProUGUI batteriesLoadedText;
     
     // Start is called before the first frame update
     void Start()
     {
         Player_Ctrl = player.GetComponent<Player_CTRL>();
-        Hit.SetActive(false);
+       // Hit.SetActive(false);
         //triggersIn = 0;
         flashlight.SetActive(false);
         darkness.SetActive(true);
@@ -153,7 +153,7 @@ public class LightAction : MonoBehaviour
             // Start Animation of Character MoveBack (maybe wait until animation is finished)
             // Move Character to Reset Position defined
             // TrapParticleSystem.Play();
-            Hit.SetActive(true);
+            //Hit.SetActive(true);
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
             trapDefenseLaunchedb = false;
@@ -179,7 +179,7 @@ public class LightAction : MonoBehaviour
             //Player_CTRL.TrappedLight = false;
             trapDefenseFinishedb = false;
             //TrapParticleSystem.Stop();
-            Hit.SetActive(false);
+            //Hit.SetActive(false);
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
@@ -189,8 +189,18 @@ public class LightAction : MonoBehaviour
             //Charakter will be pushed back until he reaches MarkerReset
             //will be pushed back for X seconds
             trapDefenseFinishedTimer -= Time.deltaTime;
-            player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset.transform.position,
-                10.0f * Time.deltaTime);
+            if (player.transform.position.y > 10)
+            {
+                player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[1].transform.position,
+                    10.0f * Time.deltaTime);
+            }
+
+            else
+            {
+                player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[0].transform.position,
+                    10.0f * Time.deltaTime);
+            }
+                
         }
     }
 }
