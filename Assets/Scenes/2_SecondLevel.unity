@@ -1364,12 +1364,11 @@ MonoBehaviour:
   - {fileID: 885619387}
   flashlight: {fileID: 1939838331}
   darkness: {fileID: 1364856435}
-  Hit: {fileID: 872257389}
+  hit: {fileID: 872257389}
   flashlightOn: 0
   inTheLight: 0
   exitTrigger: 0
   triggersIn: 0
-  flashlightsNumberText: {fileID: 0}
   batteriesLoadedText: {fileID: 1183783775}
 --- !u!1 &757641334
 GameObject:

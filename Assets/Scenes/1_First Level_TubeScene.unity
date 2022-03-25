@@ -142,7 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildIndex: 0
-  player: {fileID: 0}
 --- !u!1 &19754097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,12 +1404,11 @@ MonoBehaviour:
   - {fileID: 2062224521}
   flashlight: {fileID: 870237312}
   darkness: {fileID: 267168277}
-  Hit: {fileID: 344138661}
+  hit: {fileID: 344138661}
   flashlightOn: 0
   inTheLight: 0
   exitTrigger: 0
   triggersIn: 0
-  flashlightsNumberText: {fileID: 459904680}
   batteriesLoadedText: {fileID: 631346758}
 --- !u!4 &483787938 stripped
 Transform:
