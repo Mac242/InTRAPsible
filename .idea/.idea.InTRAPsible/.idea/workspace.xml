@@ -14,18 +14,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_STEAM.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_V2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/SceneChange.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/LightAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_OIL.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_FIST.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_LIGHT.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/CameraBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/LightFlickering.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/Player_CTRL.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@10.7.0/Editor/UpgradeCommon.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/Audio.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_STEAM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/TrapAction_V2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/LightAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SKRIPT/CameraBehavior.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25pYyzJ2M8YFE69Dx4nikgiIRzR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -75,7 +75,7 @@
       <workItem from="1646903946880" duration="653000" />
       <workItem from="1647505376785" duration="722000" />
       <workItem from="1647600246172" duration="21002000" />
-      <workItem from="1648211452512" duration="4366000" />
+      <workItem from="1648211452512" duration="7306000" />
     </task>
     <servers />
   </component>

@@ -56,6 +56,7 @@
      <Compile Include="Assets\SKRIPT\TrapAction_LIGHT.cs" />
      <Compile Include="Assets\SKRIPT\TrapAction_STEAM.cs" />
      <Compile Include="Assets\SKRIPT\LightAction.cs" />
+     <Compile Include="Assets\SKRIPT\MyScriptableObject.cs" />
      <Compile Include="Assets\SKRIPT\MainMenu.cs" />
      <Compile Include="Assets\SKRIPT\Audio.cs" />
      <Compile Include="Assets\SKRIPT\Stairs.cs" />

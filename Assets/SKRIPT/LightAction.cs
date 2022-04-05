@@ -189,7 +189,13 @@ public class LightAction : MonoBehaviour
             //Charakter will be pushed back until he reaches MarkerReset
             //will be pushed back for X seconds
             trapDefenseFinishedTimer -= Time.deltaTime;
-            if (player.transform.position.y > 4)
+            if (player.transform.position.y > 15.5)
+            {
+                player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[2].transform.position,
+                    10.0f * Time.deltaTime);
+            }
+            
+            if (player.transform.position.y > 4 && player.transform.position.y < 15.5 )
             {
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[1].transform.position,
                     10.0f * Time.deltaTime);
