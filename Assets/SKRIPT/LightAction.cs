@@ -35,6 +35,8 @@ public class LightAction : MonoBehaviour
     //public TextMeshProUGUI flashlightsNumberText;
     public TextMeshProUGUI batteriesLoadedText;
     
+    public Animator animator;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,7 @@ public class LightAction : MonoBehaviour
         flashlight.SetActive(false);
         darkness.SetActive(true);
         flashlightOn = false;
+        
     }
 
     void Update()
@@ -78,6 +81,7 @@ public class LightAction : MonoBehaviour
             {
                 flashlight.SetActive(true);
                 flashlightOn = true;
+                
                 darkness.SetActive(false);
                 triggersIn += 1;
                 Debug.Log("E pressed");
@@ -89,6 +93,7 @@ public class LightAction : MonoBehaviour
             {
                 flashlight.SetActive(false);
                 flashlightOn = false;
+                
                 darkness.SetActive(true);
                 triggersIn -= 1;
                 Debug.Log("unpressed E");

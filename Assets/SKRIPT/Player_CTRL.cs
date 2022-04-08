@@ -65,6 +65,7 @@ public class Player_CTRL : MonoBehaviour
             animator.SetBool("Trapped_Fist", false);
             animator.SetBool("Trapped_Oil", false);
             animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+            animator.SetBool("FL_ON", false);
             TrappedLight = false;
             TrappedFist = false;
             TrappedOil = false;
@@ -93,6 +94,15 @@ public class Player_CTRL : MonoBehaviour
                 Crouch = false;
                 m_CrouchDisableCollider.enabled = true;
                 animator.SetBool("crouch", false);
+            }
+
+            if (_lightAction.flashlightOn == true)
+            {
+                animator.SetBool("FL_ON", true);
+            }
+            else
+            {
+                animator.SetBool("FL_ON", false);
             }
         }
 

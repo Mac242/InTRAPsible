@@ -4061,6 +4061,7 @@ MonoBehaviour:
   exitTrigger: 0
   triggersIn: 0
   batteriesLoadedText: {fileID: 1219558610}
+  animator: {fileID: 0}
 --- !u!4 &367884045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5277297746086367208, guid: 81aa6c902b03a4637a0efea670ac834c,
@@ -50970,6 +50971,16 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 1991999165}
+    - target: {fileID: 8922919421114120940, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8922919421114120940, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81aa6c902b03a4637a0efea670ac834c, type: 3}
 --- !u!1001 &7228393827617161567
