@@ -23,10 +23,17 @@ public class LightAction : MonoBehaviour
     public bool inTheLight;
     public bool exitTrigger;
     
+    
     //Variables for function
-    private float trapActivatedTimer = -0.5f;
-    private float trapDefenseLaunchedTimer = -0.5f;
-    private float trapDefenseFinishedTimer = 1.0f;
+    [SerializeField] private float trapActivatedTimer = -0.5f;
+    [SerializeField] private float trapDefenseLaunchedTimer = -0.5f;
+    [SerializeField] private float trapDefenseFinishedTimer = 1.0f;
+    [SerializeField] private float yPointForMarker1;
+    [SerializeField] private float yPointForMarker2;
+    
+    [SerializeField] private float xPointForMarker1;
+    [SerializeField] private float xPointForMarker2;
+    
     
     public int triggersIn;
 
@@ -35,7 +42,6 @@ public class LightAction : MonoBehaviour
     //public TextMeshProUGUI flashlightsNumberText;
     public TextMeshProUGUI batteriesLoadedText;
     
-    public Animator animator;
     
     // Start is called before the first frame update
     void Start()
@@ -139,6 +145,7 @@ public class LightAction : MonoBehaviour
         if (trapActivatedTimer > 0.0f)
         {
             trapActivatedTimer -= Time.deltaTime;
+            
         }
         else
         {
@@ -156,6 +163,7 @@ public class LightAction : MonoBehaviour
             //Debug.Log("Trap Defense Launched");
             // Start Particle Effect
             // Start Animation of Character MoveBack (maybe wait until animation is finished)
+            Player_Ctrl.TrappedDarkness = true;
             // Move Character to Reset Position defined
             // TrapParticleSystem.Play();
             hit.SetActive(true);
@@ -174,33 +182,36 @@ public class LightAction : MonoBehaviour
     private void trapDefenseFinished()
     {
         //Debug.Log("tdf:"+trapDefenseFinishedTimer);
-        if (trapDefenseFinishedTimer < 0.0f)
+        if (trapDefenseFinishedTimer < 0.0f )
         {
             // After arrive on Reset Position
             // Stop Particle Effect
             // Resume Idle Animation Character
             // Unblock Input
             Player_Ctrl.PlayerIsTrapped = false;
-            //Player_CTRL.TrappedLight = false;
+            Player_Ctrl.TrappedDarkness = false;
+            
             trapDefenseFinishedb = false;
             //TrapParticleSystem.Stop();
             hit.SetActive(false);
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
-            trapDefenseFinishedTimer = 2.0f;
+            trapDefenseFinishedTimer = 1.0f;
+            inTheLight = true;
         }
         else
         {
             //Charakter will be pushed back until he reaches MarkerReset
             //will be pushed back for X seconds
             trapDefenseFinishedTimer -= Time.deltaTime;
-            if (player.transform.position.y > 15.5)
+            
+            if (player.transform.position.y > yPointForMarker2)
             {
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[2].transform.position,
                     10.0f * Time.deltaTime);
             }
             
-            if (player.transform.position.y > 4 && player.transform.position.y < 15.5 )
+            if (player.transform.position.y > yPointForMarker1 && player.transform.position.y < yPointForMarker2 )
             {
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[1].transform.position,
                     10.0f * Time.deltaTime);
@@ -211,7 +222,17 @@ public class LightAction : MonoBehaviour
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[0].transform.position,
                     10.0f * Time.deltaTime);
             }
-                
+
+            if (player.transform.position.x > xPointForMarker1 && player.transform.position.x < xPointForMarker2) 
+            {
+                player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[1].transform.position,
+                    10.0f * Time.deltaTime);
+            }
+            if (player.transform.position.x > xPointForMarker2)
+            {
+                player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[2].transform.position,
+                    10.0f * Time.deltaTime);
+            }
         }
     }
 }

@@ -19,10 +19,11 @@ public class Player_CTRL : MonoBehaviour
     [SerializeField] private Collider2D m_CrouchDisableCollider;
     public Animator animator;
     private bool facingRight = true;
-    public bool PlayerIsTrapped = true;
-    public bool TrappedLight = true;
-    public bool TrappedFist = true;
-    public bool TrappedOil = true;
+    public bool PlayerIsTrapped ;
+    public bool TrappedLight ;
+    public bool TrappedFist ;
+    public bool TrappedOil ;
+    public bool TrappedDarkness ;
     public AudioClip walkSound;
     public AudioClip crouchSound;
     public AudioSource _audioSource;
@@ -53,6 +54,8 @@ public class Player_CTRL : MonoBehaviour
         TrappedLight = false;
         TrappedFist = false;
         TrappedOil = false;
+        TrappedDarkness = false;
+        PlayerIsTrapped = false;
         _lightAction = GetComponent<LightAction>();
         Time.timeScale = 1;
     }
@@ -76,6 +79,7 @@ public class Player_CTRL : MonoBehaviour
             TrappedLight = false;
             TrappedFist = false;
             TrappedOil = false;
+            TrappedDarkness = false;
             
             if (Input.GetKey(KeyCode.Space) && isOnGround)
             {
@@ -121,11 +125,16 @@ public class Player_CTRL : MonoBehaviour
         
         if(PlayerIsTrapped)
         {
-            animator.SetBool("Trapped_Darkness", true);
+            animator.SetBool("Trapped", true);
             Crouch = false;
             m_CrouchDisableCollider.enabled = true;
             animator.SetBool("crouch", false);
-        }  
+        }
+
+        if (PlayerIsTrapped && TrappedDarkness==true)
+        {
+            animator.SetBool("Trapped_Darkness", true);
+        }
             
         if (PlayerIsTrapped && TrappedLight==true)
         {

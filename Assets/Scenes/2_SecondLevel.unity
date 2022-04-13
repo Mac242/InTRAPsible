@@ -2055,12 +2055,12 @@ PrefabInstance:
     - target: {fileID: 5277297746086367208, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.33
+      value: -43.6
       objectReference: {fileID: 0}
     - target: {fileID: 5277297746086367208, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 5277297746086367208, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
@@ -2203,9 +2203,12 @@ MonoBehaviour:
   flashlightOn: 0
   inTheLight: 0
   exitTrigger: 0
+  yPointForMarker1: 14
+  yPointForMarker2: 25
+  xPointForMarker1: 100
+  xPointForMarker2: 100
   triggersIn: 0
   batteriesLoadedText: {fileID: 1183783775}
-  animator: {fileID: 0}
 --- !u!1001 &736990192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4436,7 +4439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404050538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.33, y: 4.9, z: -5}
+  m_LocalPosition: {x: -43.6, y: 5.4, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4590,7 +4593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489514286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.33, y: 4.9, z: -5}
+  m_LocalPosition: {x: -43.6, y: 5.4, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

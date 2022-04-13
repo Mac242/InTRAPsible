@@ -4059,6 +4059,10 @@ MonoBehaviour:
   flashlightOn: 0
   inTheLight: 0
   exitTrigger: 0
+  yPointForMarker1: 4
+  yPointForMarker2: 15
+  xPointForMarker1: -100
+  xPointForMarker2: -100
   triggersIn: 0
   batteriesLoadedText: {fileID: 1219558610}
   animator: {fileID: 0}
@@ -43998,7 +44002,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7798165, y: 1}
+    m_SensorSize: {x: 1.7766991, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

@@ -65,7 +65,7 @@ void trapDefenseLaunched()
             //Debug.Log("Trap Defense Launched");
             // Start Particle Effect
             // Start Animation of Character MoveBack (maybe wait until animation is finished)
-
+        
             // Move Character to Reset Position defined
             TrapParticleSystem.Play();
             Hit.SetActive(true);

@@ -537,6 +537,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Trapped_Oil
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Trapped_Darkness
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5960762144187389859}
   m_Solo: 0
