@@ -43998,7 +43998,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7761905, y: 1}
+    m_SensorSize: {x: 1.7798165, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -50768,8 +50768,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_WIN
       objectReference: {fileID: 0}
+    - target: {fileID: 850280558723579070, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -465.24234
+      objectReference: {fileID: 0}
+    - target: {fileID: 850280558723579070, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 850280558723579071, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -236
+      objectReference: {fileID: 0}
+    - target: {fileID: 850280558723579071, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 152
+      objectReference: {fileID: 0}
+    - target: {fileID: 850280559450232177, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 850280559450232177, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 850280559450232177, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3696ec745f1d4626bc3c3b5f98a417b, type: 3}
+--- !u!1 &850280558211202404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1913581826100173805, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+    type: 3}
+  m_PrefabInstance: {fileID: 850280558211202403}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &850280558211202405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5015249803054527502, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+    type: 3}
+  m_PrefabInstance: {fileID: 850280558211202403}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &850280558211202406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1967663803757354247, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+    type: 3}
+  m_PrefabInstance: {fileID: 850280558211202403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2009589000833180727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50961,6 +51014,21 @@ PrefabInstance:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 142010280}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: winPanelGold
+      value: 
+      objectReference: {fileID: 850280558211202406}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: winPanelBronze
+      value: 
+      objectReference: {fileID: 850280558211202405}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: winPanelSilver
+      value: 
+      objectReference: {fileID: 850280558211202404}
     - target: {fileID: 5277297746086367215, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
       propertyPath: m_Name

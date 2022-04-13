@@ -20,7 +20,6 @@ public class Player_CTRL : MonoBehaviour
     public Animator animator;
     private bool facingRight = true;
     public bool PlayerIsTrapped = true;
-    public GameObject WINPanel;
     public bool TrappedLight = true;
     public bool TrappedFist = true;
     public bool TrappedOil = true;
@@ -32,6 +31,10 @@ public class Player_CTRL : MonoBehaviour
     public Text timeText;
     private float minutes;
     private float seconds;
+    public GameObject WINPanel;
+    public GameObject winPanelGold;
+    public GameObject winPanelSilver;
+    public GameObject winPanelBronze;
     public TextMeshProUGUI winTime;
 
     private LightAction _lightAction;
@@ -43,6 +46,9 @@ public class Player_CTRL : MonoBehaviour
         Physics.gravity = Physics.gravity * gravityModifier;
         animator.SetBool("Trapped", false);
         WINPanel.SetActive(false);
+        winPanelGold.SetActive(false);
+        winPanelSilver.SetActive(false);
+        winPanelBronze.SetActive(false);
         Cursor.visible = false;
         TrappedLight = false;
         TrappedFist = false;
@@ -61,6 +67,7 @@ public class Player_CTRL : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
             animator.SetBool("Trapped", false);
+            animator.SetBool("Trapped_Darkness", false);
             animator.SetBool("Trapped_Light", false);
             animator.SetBool("Trapped_Fist", false);
             animator.SetBool("Trapped_Oil", false);
@@ -114,7 +121,7 @@ public class Player_CTRL : MonoBehaviour
         
         if(PlayerIsTrapped)
         {
-            animator.SetBool("Trapped", true);
+            animator.SetBool("Trapped_Darkness", true);
             Crouch = false;
             m_CrouchDisableCollider.enabled = true;
             animator.SetBool("crouch", false);
@@ -212,25 +219,28 @@ public class Player_CTRL : MonoBehaviour
 
         if (time < 36f)
         {
+            winPanelGold.SetActive(true);
             float minutes = Mathf.FloorToInt(time / 60);
             float seconds = Mathf.FloorToInt(time % 60);
-            winTime.text = "You are Gold " + string.Format("{0:00}:{1:00}", minutes , seconds);
+            winTime.text = "You run this basement in " + string.Format("{0:00}:{1:00}", minutes , seconds);
             //LightAction.flashlightsNumber += 3;
-            LightAction.batteriesLoad += 15f;
+            LightAction.batteriesLoad += 10f;
         }
         else if (time < 60f && time >= 36f)
         {
+            winPanelSilver.SetActive(true);
             float minutes = Mathf.FloorToInt(time / 60);
             float seconds = Mathf.FloorToInt(time % 60);
-            winTime.text = "You are Silver " + string.Format("{0:00}:{1:00}", minutes , seconds);
-            LightAction.batteriesLoad += 10f;
+            winTime.text = "You walked this basement in " + string.Format("{0:00}:{1:00}", minutes , seconds);
+            LightAction.batteriesLoad += 6f;
         }
         else if (time >= 60f)
         {
+            winPanelBronze.SetActive(true);
             float minutes = Mathf.FloorToInt(time / 60);
             float seconds = Mathf.FloorToInt(time % 60);
-            winTime.text = "You are Bronze " + string.Format("{0:00}:{1:00}", minutes , seconds);
-            LightAction.batteriesLoad += 5f;
+            winTime.text = "You escaped this basement in " + string.Format("{0:00}:{1:00}", minutes , seconds);
+            LightAction.batteriesLoad += 3f;
         }
         
         //turn on WINPAnel
