@@ -196,7 +196,7 @@ public class LightAction : MonoBehaviour
             hit.SetActive(false);
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
-            trapDefenseFinishedTimer = 1.0f;
+            trapDefenseFinishedTimer = 1.5f;
             inTheLight = true;
         }
         else
@@ -226,12 +226,12 @@ public class LightAction : MonoBehaviour
             if (player.transform.position.x > xPointForMarker1 && player.transform.position.x < xPointForMarker2) 
             {
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[1].transform.position,
-                    10.0f * Time.deltaTime);
+                    8.0f * Time.deltaTime);
             }
             if (player.transform.position.x > xPointForMarker2)
             {
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[2].transform.position,
-                    10.0f * Time.deltaTime);
+                    8.0f * Time.deltaTime);
             }
         }
     }

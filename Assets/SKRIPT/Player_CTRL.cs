@@ -64,7 +64,7 @@ public class Player_CTRL : MonoBehaviour
     void Update()
     {       
         DisplayTime();
-        
+
         if (!PlayerIsTrapped)
         {   
             horizontalInput = Input.GetAxis("Horizontal");

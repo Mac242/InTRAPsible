@@ -24,4 +24,12 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene(buildIndex + 1);
     }
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
