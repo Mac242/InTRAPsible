@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -33,12 +34,15 @@ public class Player_CTRL : MonoBehaviour
     private float minutes;
     private float seconds;
     public GameObject WINPanel;
+    public GameObject pausePanel;
+    private bool paused;
     public GameObject winPanelGold;
     public GameObject winPanelSilver;
     public GameObject winPanelBronze;
     public TextMeshProUGUI winTime;
 
     private LightAction _lightAction;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +62,9 @@ public class Player_CTRL : MonoBehaviour
         PlayerIsTrapped = false;
         _lightAction = GetComponent<LightAction>();
         Time.timeScale = 1;
+        pausePanel.SetActive(false);
+        paused = false;
+
     }
     
 
@@ -67,7 +74,7 @@ public class Player_CTRL : MonoBehaviour
 
         if (!PlayerIsTrapped)
         {   
-            horizontalInput = Input.GetAxis("Horizontal");
+            horizontalInput = Input.GetAxisRaw("Horizontal");
             transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
             animator.SetBool("Trapped", false);
             animator.SetBool("Trapped_Darkness", false);
@@ -80,6 +87,15 @@ public class Player_CTRL : MonoBehaviour
             TrappedFist = false;
             TrappedOil = false;
             TrappedDarkness = false;
+
+            if (Input.GetKey(KeyCode.Escape) && !paused)
+            {
+                pausePanel.SetActive(true);
+                Time.timeScale = 0;
+                paused = true;
+                Debug.Log("Pause");
+            }
+            
             
             if (Input.GetKey(KeyCode.Space) && isOnGround)
             {
@@ -219,6 +235,13 @@ public class Player_CTRL : MonoBehaviour
         float minutes = Mathf.FloorToInt(time / 60);
         float seconds = Mathf.FloorToInt(time % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+    
+    public void Unpause()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1;
+        paused = false;
     }
     public void WIN()
     {

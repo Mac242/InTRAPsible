@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+using Slider = UnityEngine.UI.Slider;
 
 public class LightAction : MonoBehaviour
 {
@@ -14,6 +17,8 @@ public class LightAction : MonoBehaviour
     public GameObject darkness;
     public GameObject hit;
     private Player_CTRL Player_Ctrl;
+    public GameObject globalLight;
+    public Slider brightnessSlider;
     
     //booleans
     private bool trapActivatedb = false;
@@ -111,6 +116,12 @@ public class LightAction : MonoBehaviour
             batteriesLoad -= Time.deltaTime;
         }
     }
+
+    public void Brightness()
+    {
+        globalLight.GetComponent<Light2D>().intensity = brightnessSlider.value;
+
+    }
     
     public void OnTriggerExit2D(Collider2D other)
     {
@@ -194,9 +205,9 @@ public class LightAction : MonoBehaviour
             trapDefenseFinishedb = false;
             //TrapParticleSystem.Stop();
             hit.SetActive(false);
-            trapActivatedTimer = -0.5f;
+            trapActivatedTimer = -1f;
             trapDefenseLaunchedTimer = -0.5f;
-            trapDefenseFinishedTimer = 1.5f;
+            trapDefenseFinishedTimer = 1.0f;
             inTheLight = true;
         }
         else
@@ -208,30 +219,36 @@ public class LightAction : MonoBehaviour
             if (player.transform.position.y > yPointForMarker2)
             {
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[2].transform.position,
-                    10.0f * Time.deltaTime);
+                    6.5f * Time.deltaTime);
             }
             
             if (player.transform.position.y > yPointForMarker1 && player.transform.position.y < yPointForMarker2 )
             {
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[1].transform.position,
-                    10.0f * Time.deltaTime);
+                    6.5f * Time.deltaTime);
             }
 
             else
             {
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[0].transform.position,
-                    10.0f * Time.deltaTime);
+                    6.5f * Time.deltaTime);
             }
 
             if (player.transform.position.x > xPointForMarker1 && player.transform.position.x < xPointForMarker2) 
             {
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[1].transform.position,
-                    8.0f * Time.deltaTime);
+                    6.5f * Time.deltaTime);
             }
-            if (player.transform.position.x > xPointForMarker2)
+           /* if (player.transform.position.x > xPointForMarker2)
             {
                 player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[2].transform.position,
-                    8.0f * Time.deltaTime);
+                    6.5f * Time.deltaTime);
+            }*/
+            
+            if (player.transform.position.x < xPointForMarker2 && player.transform.position.y > yPointForMarker2)
+            {
+                player.transform.position = Vector2.MoveTowards(player.transform.position, markerReset[3].transform.position,
+                    6.5f * Time.deltaTime);
             }
         }
     }

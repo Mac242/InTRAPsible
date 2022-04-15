@@ -275,22 +275,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   Crouchspeed: -5
-  jumpForce: 30
-  gravityModifier: 1
+  jumpForce: 35
+  gravityModifier: 5
   isOnGround: 1
   Crouch: 0
   m_CrouchDisableCollider: {fileID: 5277297746086367220}
   animator: {fileID: 5277297746086367221}
   PlayerIsTrapped: 0
-  WINPanel: {fileID: 0}
   TrappedLight: 1
   TrappedFist: 1
   TrappedOil: 1
+  TrappedDarkness: 0
   walkSound: {fileID: 8300000, guid: aad00d555cf3043edb0bb4ed100459fc, type: 3}
   crouchSound: {fileID: 0}
   _audioSource: {fileID: 5277297746086367223}
   time: 0
   timeText: {fileID: 0}
+  WINPanel: {fileID: 0}
+  winPanelGold: {fileID: 0}
+  winPanelSilver: {fileID: 0}
+  winPanelBronze: {fileID: 0}
   winTime: {fileID: 0}
 --- !u!50 &5277297746086367211
 Rigidbody2D:
@@ -304,7 +308,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.5
+  m_Mass: 1.8
   m_LinearDrag: 0.03
   m_AngularDrag: 0.2
   m_GravityScale: 5
