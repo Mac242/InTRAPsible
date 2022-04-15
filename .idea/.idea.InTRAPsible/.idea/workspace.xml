@@ -6,24 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="1f2d781f-5bf6-4f9c-9ec0-459016cfc316" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InTRAPsible/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InTRAPsible/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Canvas_WIN.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Canvas_WIN.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SKRIPT/LightAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SKRIPT/LightAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SKRIPT/Player_CTRL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SKRIPT/Player_CTRL.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SKRIPT/SceneChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SKRIPT/SceneChange.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/1_First Level_TubeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1_First Level_TubeScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/3_Third Level_BasementScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/3_Third Level_BasementScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ShaderCache.db" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +102,7 @@
       <workItem from="1649313417488" duration="597000" />
       <workItem from="1649411566157" duration="1587000" />
       <workItem from="1649837030849" duration="10322000" />
-      <workItem from="1650017220876" duration="9665000" />
+      <workItem from="1650017220876" duration="13370000" />
     </task>
     <servers />
   </component>

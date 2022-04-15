@@ -20,6 +20,7 @@ public class LightAction : MonoBehaviour
     public GameObject globalLight;
     public Slider brightnessSlider;
     
+    
     //booleans
     private bool trapActivatedb = false;
     private bool trapDefenseLaunchedb = false;
@@ -119,8 +120,8 @@ public class LightAction : MonoBehaviour
 
     public void Brightness()
     {
+        
         globalLight.GetComponent<Light2D>().intensity = brightnessSlider.value;
-
     }
     
     public void OnTriggerExit2D(Collider2D other)
