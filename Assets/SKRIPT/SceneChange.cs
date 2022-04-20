@@ -13,17 +13,16 @@ public class SceneChange : MonoBehaviour
     {
         Cursor.visible = true;
         buildIndex = SceneManager.GetActiveScene().buildIndex;
+        _playerCtrl= GetComponent<Player_CTRL>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-    }
 
     public void NextLevel()
     {
         SceneManager.LoadScene(buildIndex + 1);
     }
+    
     public void ToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -33,5 +32,10 @@ public class SceneChange : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(buildIndex);
     }
 }

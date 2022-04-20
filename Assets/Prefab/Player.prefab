@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2351606699f4a31b1cabb2bbbff4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 9
   Crouchspeed: -5
   jumpForce: 35
   gravityModifier: 5
@@ -292,6 +292,8 @@ MonoBehaviour:
   time: 0
   timeText: {fileID: 0}
   WINPanel: {fileID: 0}
+  pausePanel: {fileID: 0}
+  paused: 0
   winPanelGold: {fileID: 0}
   winPanelSilver: {fileID: 0}
   winPanelBronze: {fileID: 0}

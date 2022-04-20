@@ -35,7 +35,7 @@ public class Player_CTRL : MonoBehaviour
     private float seconds;
     public GameObject WINPanel;
     public GameObject pausePanel;
-    private bool paused;
+    public bool paused;
     public GameObject winPanelGold;
     public GameObject winPanelSilver;
     public GameObject winPanelBronze;
@@ -71,6 +71,7 @@ public class Player_CTRL : MonoBehaviour
     void Update()
     {       
         DisplayTime();
+        Pause();
 
         if (!PlayerIsTrapped)
         {   
@@ -88,15 +89,6 @@ public class Player_CTRL : MonoBehaviour
             TrappedOil = false;
             TrappedDarkness = false;
 
-            if (Input.GetKey(KeyCode.Escape) && !paused)
-            {
-                pausePanel.SetActive(true);
-                Time.timeScale = 0;
-                paused = true;
-                Debug.Log("Pause");
-            }
-            
-            
             if (Input.GetKey(KeyCode.Space) && isOnGround)
             {
                 _RB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -237,12 +229,6 @@ public class Player_CTRL : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
     
-    public void Unpause()
-    {
-        pausePanel.SetActive(false);
-        Time.timeScale = 1;
-        paused = false;
-    }
     public void WIN()
     {
         Cursor.visible = true;
@@ -256,7 +242,7 @@ public class Player_CTRL : MonoBehaviour
             float seconds = Mathf.FloorToInt(time % 60);
             winTime.text = "You run this basement in " + string.Format("{0:00}:{1:00}", minutes , seconds);
             //LightAction.flashlightsNumber += 3;
-            LightAction.batteriesLoad += 10f;
+            LightAction.batteriesLoad += 5f;
         }
         else if (time < 60f && time >= 36f)
         {
@@ -264,7 +250,7 @@ public class Player_CTRL : MonoBehaviour
             float minutes = Mathf.FloorToInt(time / 60);
             float seconds = Mathf.FloorToInt(time % 60);
             winTime.text = "You walked this basement in " + string.Format("{0:00}:{1:00}", minutes , seconds);
-            LightAction.batteriesLoad += 6f;
+            LightAction.batteriesLoad += 3f;
         }
         else if (time >= 60f)
         {
@@ -272,7 +258,7 @@ public class Player_CTRL : MonoBehaviour
             float minutes = Mathf.FloorToInt(time / 60);
             float seconds = Mathf.FloorToInt(time % 60);
             winTime.text = "You escaped this basement in " + string.Format("{0:00}:{1:00}", minutes , seconds);
-            LightAction.batteriesLoad += 3f;
+            LightAction.batteriesLoad += 1f;
         }
         
         //turn on WINPAnel
@@ -293,5 +279,34 @@ public class Player_CTRL : MonoBehaviour
         //close the window where the game is being played in 
         Application.Quit();
     }
+
+    public void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
+        {
+            pausePanel.SetActive(true);
+            Cursor.visible = true;
+            Time.timeScale = 0;
+            paused = true;
+            Debug.Log("Pause");
+        }
+        
+        else if (paused == true && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Unpause();
+        }
+
+    }
+
+    public void Unpause()
+    {
+        pausePanel.SetActive(false);
+        Cursor.visible = false;
+        Time.timeScale = 1;
+        paused = false;
+        Debug.Log("unpause");
+    }
+
+   
     
 }

@@ -6,14 +6,35 @@
   <component name="ChangeListManager">
     <list default="true" id="1f2d781f-5bf6-4f9c-9ec0-459016cfc316" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InTRAPsible/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InTRAPsible/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enviorment/Assets/0F/Asset Heizung 1_.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enviorment/Assets/0F/Asset Heizung 1_.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/Canvas_WIN.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Canvas_WIN.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SKRIPT/LightAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SKRIPT/LightAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SKRIPT/Player_CTRL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SKRIPT/Player_CTRL.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SKRIPT/SceneChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SKRIPT/SceneChange.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/1_First Level_TubeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1_First Level_TubeScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/2_SecondLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/2_SecondLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/3_Third Level_BasementScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/3_Third Level_BasementScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Rider.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Rider.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.TextMeshPro.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.TextMeshPro.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Timeline.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Timeline.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Timeline.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Timeline.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/UnityEditor.TestRunner.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/UnityEditor.TestRunner.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/UnityEditor.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/UnityEditor.UI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/UnityEngine.TestRunner.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/UnityEngine.TestRunner.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/UnityEngine.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/UnityEngine.UI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ShaderCache.db" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +73,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="rider.run.widget.enabled.cache" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -102,7 +123,8 @@
       <workItem from="1649313417488" duration="597000" />
       <workItem from="1649411566157" duration="1587000" />
       <workItem from="1649837030849" duration="10322000" />
-      <workItem from="1650017220876" duration="13370000" />
+      <workItem from="1650017220876" duration="14100000" />
+      <workItem from="1650436963355" duration="4568000" />
     </task>
     <servers />
   </component>
