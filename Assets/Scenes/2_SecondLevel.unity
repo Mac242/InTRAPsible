@@ -4168,8 +4168,59 @@ PrefabInstance:
       propertyPath: flickeringTime
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2061772762958697244, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: particleFlickering
+      value: 
+      objectReference: {fileID: 1325294690}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 1.0000437
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.99999845
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Position.x
+      value: 0.0000000161568
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 0.0000005448339
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.z
+      value: 178.872
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 1560503289}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c93ec68b31134e9e9830c60235e6036, type: 3}
+--- !u!198 &1325294690 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+    type: 3}
+  m_PrefabInstance: {fileID: 1325294689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1337234326
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,8 +4852,59 @@ PrefabInstance:
       propertyPath: flickeringTime
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2061772762958697244, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: particleFlickering
+      value: 
+      objectReference: {fileID: 1490050409}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 1.0000199
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.99999934
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Position.x
+      value: 0.000000040446707
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 0.00000013844024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.z
+      value: 179.8016
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 41653022}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c93ec68b31134e9e9830c60235e6036, type: 3}
+--- !u!198 &1490050409 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+    type: 3}
+  m_PrefabInstance: {fileID: 1490050408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1493632629
 PrefabInstance:
   m_ObjectHideFlags: 0

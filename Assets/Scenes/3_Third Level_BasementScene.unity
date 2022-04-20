@@ -7720,6 +7720,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Intrapsible_LightsFlickering
       objectReference: {fileID: 0}
+    - target: {fileID: 2061772762958697244, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: particleFlickering
+      value: 
+      objectReference: {fileID: 2104076563}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Position.x
+      value: -0.000000010729851
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: -0.0000005304814
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 2106470738}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c93ec68b31134e9e9830c60235e6036, type: 3}
 --- !u!1 &447332570
@@ -16050,6 +16080,21 @@ PrefabInstance:
       propertyPath: delay
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 2061772762958697244, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: particleFlickering
+      value: 
+      objectReference: {fileID: 1967208969}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+        type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 95285021}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c93ec68b31134e9e9830c60235e6036, type: 3}
 --- !u!1 &845248575
@@ -44295,6 +44340,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12863b0ed6be34603b97edc2d44e8450, type: 3}
+--- !u!198 &1967208969 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+    type: 3}
+  m_PrefabInstance: {fileID: 825350909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1989783002
 GameObject:
   m_ObjectHideFlags: 0
@@ -50341,6 +50392,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!198 &2104076563 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5259391222265146732, guid: 7c93ec68b31134e9e9830c60235e6036,
+    type: 3}
+  m_PrefabInstance: {fileID: 444003583}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2105717497 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5642111959235135663, guid: b0e4b3764b3d36741b53c6116477731e,
