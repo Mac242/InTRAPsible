@@ -263,6 +263,8 @@ public class Player_CTRL : MonoBehaviour
         
         //turn on WINPAnel
         WINPanel.SetActive(true);
+        
+
     }
 
         //playAgainButton from the WINPanel

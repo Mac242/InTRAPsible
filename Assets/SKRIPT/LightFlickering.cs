@@ -1,20 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 public class LightFlickering : MonoBehaviour
 {
     public GameObject lightFlicker;
 
-    [SerializeField] float flickering;
+    [SerializeField] public float flickering;
     [SerializeField] float interval;
     [SerializeField] private float delay;
     [SerializeField] private float flickeringTime;
     public ParticleSystem particleFlickering;
-    
+
+    [FormerlySerializedAs("_light2D")] public GameObject light2D;
+    public float lowerLight = 0.2f;
+    public float normalizeLight = 0.8f;
+    private Light2D _light2D;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        _light2D = light2D.GetComponent<Light2D>();
+       
     }
 
     // Update is called once per frame
@@ -36,14 +46,22 @@ public class LightFlickering : MonoBehaviour
             }
         }
 
-        if (flickering <= .5f)
+        if (flickering <= 1f)
         {
-            particleFlickering.Emit(1);
+            _light2D.intensity = lowerLight;
+            
+                 if (flickering <= .5f)
+                 {
+                      particleFlickering.Emit(1);
+            
+                 }
         }
         else
         {
+            _light2D.intensity = normalizeLight;
             particleFlickering.Stop();
         }
+        
     }
 
     void Flickering()
