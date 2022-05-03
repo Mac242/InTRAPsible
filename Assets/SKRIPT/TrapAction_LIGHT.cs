@@ -103,6 +103,7 @@ void trapDefenseFinished()
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
             _audioSource.Stop();
+            Player_CTRL.isOnGround = true;
         }
         else
         {

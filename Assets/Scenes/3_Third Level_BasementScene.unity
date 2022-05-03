@@ -9032,7 +9032,8 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2061772762958697244, guid: 7c93ec68b31134e9e9830c60235e6036, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7c93ec68b31134e9e9830c60235e6036, type: 3}
 --- !u!1 &447332570
 GameObject:
@@ -45889,7 +45890,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7784257, y: 1}
+    m_SensorSize: {x: 1.7802198, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

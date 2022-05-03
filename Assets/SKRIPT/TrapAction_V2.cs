@@ -111,6 +111,7 @@ void trapDefenseFinished()
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
+            Player_CTRL.isOnGround = true;
         }
         else
         {

@@ -137,26 +137,36 @@ public class Player_CTRL : MonoBehaviour
             Crouch = false;
             m_CrouchDisableCollider.enabled = true;
             animator.SetBool("crouch", false);
+            animator.SetBool("Jump", false);
+            isOnGround = true;
         }
 
         if (PlayerIsTrapped && TrappedDarkness==true)
         {
             animator.SetBool("Trapped_Darkness", true);
+            animator.SetBool("Jump", false);
+            isOnGround = true;
         }
             
         if (PlayerIsTrapped && TrappedLight==true)
         {
             animator.SetBool("Trapped_Light", true);
+            animator.SetBool("Jump", false);
+            isOnGround = true;
         }
         
         if (PlayerIsTrapped && TrappedFist==true)
         {
             animator.SetBool("Trapped_Fist", true);   
+            animator.SetBool("Jump", false);
+            isOnGround = true;
         }
 
         if (PlayerIsTrapped && TrappedOil==true)
         {
             animator.SetBool("Trapped_Oil", true);   
+            animator.SetBool("Jump", false);
+            isOnGround = true;
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))

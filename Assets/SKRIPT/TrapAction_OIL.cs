@@ -74,6 +74,7 @@ void trapDefenseLaunched()
                 trapDefenseLaunchedb = false;
                 trapDefenseFinishedb = true;
             //}
+            Player_CTRL.isOnGround = true;
         }
         else
         {
