@@ -45,6 +45,8 @@ public class LightAction : MonoBehaviour
 
     //public static int flashlightsNumber;
     public static float batteriesLoad;
+
+    private float batteriesLoadRounded;
     //public TextMeshProUGUI flashlightsNumberText;
     public TextMeshProUGUI batteriesLoadedText;
     
@@ -63,8 +65,9 @@ public class LightAction : MonoBehaviour
 
     void Update()
     {
+        batteriesLoadRounded = (float) Math.Round(batteriesLoad,1);
         //flashlightsNumberText.text = "Lights:" + " " + flashlightsNumber;
-        batteriesLoadedText.text = "Batterie" + " " + batteriesLoad;
+        batteriesLoadedText.text = "Batterie" + " " + batteriesLoadRounded;
         
         if (trapActivatedb==true) trapActivated();
         if (trapDefenseLaunchedb) trapDefenseLaunched();
