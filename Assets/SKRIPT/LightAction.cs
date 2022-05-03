@@ -202,6 +202,7 @@ public class LightAction : MonoBehaviour
             // Unblock Input
             Player_Ctrl.PlayerIsTrapped = false;
             Player_Ctrl.TrappedDarkness = false;
+            Player_Ctrl.isOnGround = true;
             
             trapDefenseFinishedb = false;
             //TrapParticleSystem.Stop();
