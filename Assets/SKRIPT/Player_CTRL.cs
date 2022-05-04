@@ -89,7 +89,7 @@ public class Player_CTRL : MonoBehaviour
             TrappedOil = false;
             TrappedDarkness = false;
 
-            if (Input.GetKey(KeyCode.Space) && isOnGround)
+            if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow)) && isOnGround)
             {
                 _RB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 isOnGround = false;
