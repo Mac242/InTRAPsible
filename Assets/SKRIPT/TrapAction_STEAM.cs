@@ -10,6 +10,8 @@ public class TrapAction_STEAM : MonoBehaviour
     private Player_CTRL Player_CTRL;
     //public AudioSource _audioSource;
     public GameObject Hit;
+    public GameObject hit2;
+    public GameObject tutorialHit;
     
     //booleans
     bool trapActivatedb = false;
@@ -26,6 +28,8 @@ public class TrapAction_STEAM : MonoBehaviour
     {   
         Player_CTRL = Player.GetComponent<Player_CTRL>(); 
         Hit.SetActive(false);
+        hit2.SetActive(false);
+        tutorialHit.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D hit)
@@ -69,6 +73,8 @@ void trapDefenseLaunched()
             // Move Character to Reset Position defined
             TrapParticleSystem.Play();
             Hit.SetActive(true);
+            hit2.SetActive(true);
+            
 
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
@@ -96,6 +102,8 @@ void trapDefenseFinished()
             trapDefenseFinishedb = false;
             TrapParticleSystem.Stop();
             Hit.SetActive(false);
+            hit2.SetActive(false);
+            tutorialHit.SetActive(true);
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;

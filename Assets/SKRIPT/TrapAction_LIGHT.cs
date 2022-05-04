@@ -9,6 +9,7 @@ public class TrapAction_LIGHT : MonoBehaviour
     public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
     public GameObject Hit;
+    
     public AudioClip lightTrapSound;
     public AudioSource _audioSource;
   

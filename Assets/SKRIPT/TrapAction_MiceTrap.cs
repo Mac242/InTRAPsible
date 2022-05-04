@@ -8,6 +8,10 @@ public class TrapAction_MiceTrap : MonoBehaviour
     public GameObject MarkerReset;
     public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
+    [SerializeField] private GameObject tutorialTrap;
+    [SerializeField] private GameObject hitTrap;
+    
+    
     //public AudioSource _audioSource;
     //public GameObject Hit;
     
@@ -25,7 +29,8 @@ public class TrapAction_MiceTrap : MonoBehaviour
     void Start()
     {   
         Player_CTRL = Player.GetComponent<Player_CTRL>(); 
-        //Hit.SetActive(false);
+        hitTrap.SetActive(false);
+        tutorialTrap.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D hit)
@@ -68,7 +73,8 @@ void trapDefenseLaunched()
 
             // Move Character to Reset Position defined
             TrapParticleSystem.Play();
-            //Hit.SetActive(true);
+           
+            hitTrap.SetActive(true);
 
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
@@ -95,7 +101,8 @@ void trapDefenseFinished()
             //Player_CTRL.TrappedLight = false;
             trapDefenseFinishedb = false;
             TrapParticleSystem.Stop();
-            //Hit.SetActive(false);
+            hitTrap.SetActive(false);
+            tutorialTrap.SetActive(true);
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
