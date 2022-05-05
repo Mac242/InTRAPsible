@@ -11667,6 +11667,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -122.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2930865440842258176, guid: 8aa6370913525a74f89a557e87a652ec,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2406045223730327233}
+    - target: {fileID: 2930865440842258176, guid: 8aa6370913525a74f89a557e87a652ec,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930865440842258176, guid: 8aa6370913525a74f89a557e87a652ec,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4192258376925799623, guid: 8aa6370913525a74f89a557e87a652ec,
         type: 3}
       propertyPath: m_Mesh
@@ -12156,6 +12171,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706671719507256796, guid: 8aa6370913525a74f89a557e87a652ec,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2105717497}
+    - target: {fileID: 8706671719507256796, guid: 8aa6370913525a74f89a557e87a652ec,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToMainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aa6370913525a74f89a557e87a652ec, type: 3}
@@ -48246,7 +48271,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7765043, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

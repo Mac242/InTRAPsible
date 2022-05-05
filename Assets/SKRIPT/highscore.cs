@@ -22,10 +22,10 @@ public class highscore : MonoBehaviour
 
     private void Start()
     {
-        rank1 = 77f;
+        rank1 = 73f;
         losePanel.SetActive(false);
         leaderboardNames[0].text = "Anna the Dev";
-        leaderboardTime[0].text = "" + rank1 + "seconds";
+        leaderboardTime[0].text = "" + rank1 + " " + "seconds";
         
     }
     
@@ -52,6 +52,7 @@ public class highscore : MonoBehaviour
     public void SetNull()
     {
         Player_CTRL.overallTime = 0;
+        
     }
 
    
