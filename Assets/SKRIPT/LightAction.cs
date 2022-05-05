@@ -123,7 +123,6 @@ public class LightAction : MonoBehaviour
 
     public void Brightness()
     {
-        
         globalLight.GetComponent<Light2D>().intensity = brightnessSlider.value;
     }
     
@@ -160,7 +159,6 @@ public class LightAction : MonoBehaviour
         if (trapActivatedTimer > 0.0f)
         {
             trapActivatedTimer -= Time.deltaTime;
-            
         }
         else
         {

@@ -30,6 +30,7 @@ public class Player_CTRL : MonoBehaviour
     public AudioSource _audioSource;
     //Time
     public float time;
+    public static float overallTime;
     public Text timeText;
     private float minutes;
     private float seconds;
@@ -72,6 +73,7 @@ public class Player_CTRL : MonoBehaviour
     {       
         DisplayTime();
         Pause();
+        overallTime += Time.deltaTime;
 
         if (!PlayerIsTrapped)
         {   
@@ -307,7 +309,6 @@ public class Player_CTRL : MonoBehaviour
         {
             Unpause();
         }
-
     }
 
     public void Unpause()
@@ -318,7 +319,4 @@ public class Player_CTRL : MonoBehaviour
         paused = false;
         Debug.Log("unpause");
     }
-
-   
-    
 }
