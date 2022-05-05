@@ -49,11 +49,6 @@ public class highscore : MonoBehaviour
         }
     }
 
-    public void SetNull()
-    {
-        Player_CTRL.overallTime = 0;
-        
-    }
+  
 
-   
 }

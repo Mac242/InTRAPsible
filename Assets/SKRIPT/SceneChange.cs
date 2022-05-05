@@ -11,6 +11,7 @@ public class SceneChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Cursor.visible = true;
         buildIndex = SceneManager.GetActiveScene().buildIndex;
         _playerCtrl= GetComponent<Player_CTRL>();
@@ -26,6 +27,11 @@ public class SceneChange : MonoBehaviour
     public void ToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    public void SetNull()
+    {
+        Player_CTRL.overallTime = 0;
+        
     }
     
 
