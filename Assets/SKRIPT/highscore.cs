@@ -17,12 +17,14 @@ public class highscore : MonoBehaviour
     public float timeToBoard;
     public float timeNotToBoard;
     public float rank1;
+    public float rank2;
 
     public GameObject losePanel;
 
     private void Start()
     {
         rank1 = 73f;
+        rank2 = 1200f;
         losePanel.SetActive(false);
         leaderboardNames[0].text = "Anna the Dev";
         leaderboardTime[0].text = "" + rank1 + " " + "seconds";
@@ -39,16 +41,39 @@ public class highscore : MonoBehaviour
             timeToBoard = (float) Math.Round(Player_CTRL.overallTime,2);
             leaderboardTime[0].text = "" + timeToBoard + "seconds";
             losePanel.SetActive(false);
+            rank1 = timeToBoard;
+        }
+        
+        if (Player_CTRL.overallTime < rank2  && Player_CTRL.overallTime > rank1)
+        {
+            leaderboardNames[1].text =  submittedName.text;
+            timeToBoard = (float) Math.Round(Player_CTRL.overallTime,2);
+            leaderboardTime[1].text = "" + timeToBoard + "seconds";
+            losePanel.SetActive(false);
+            rank2 = timeToBoard;
         }
 
-        if (Player_CTRL.overallTime >= rank1)
+      /*  if (Player_CTRL.overallTime >= rank1)
         {
             losePanel.SetActive(true);
             timeNotToBoard = (float) Math.Round(Player_CTRL.overallTime,2);
             overallTimeText.text = "Your Overall Time:" + timeNotToBoard;
-        }
+        } */
     }
 
-  
+    public void SetHighscore()
+    {
+        
+        if (Player_CTRL.overallTime < rank1)
+        {
+            PlayerPrefs.Save();
+        }
+        
+        if (Player_CTRL.overallTime < rank2 && Player_CTRL.overallTime > rank1)
+        {
+            PlayerPrefs.Save();
+        }
+        
+    }
 
 }

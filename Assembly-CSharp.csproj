@@ -45,6 +45,7 @@
      <Compile Include="Assets\SKRIPT\TrapAction_LIGHT.cs" />
      <Compile Include="Assets\SKRIPT\TrapAction_STEAM.cs" />
      <Compile Include="Assets\SKRIPT\LightAction.cs" />
+     <Compile Include="Assets\SKRIPT\highscore.cs" />
      <Compile Include="Assets\SKRIPT\MainMenu.cs" />
      <Compile Include="Assets\SKRIPT\Audio.cs" />
      <Compile Include="Assets\SKRIPT\Stairs.cs" />
@@ -57,7 +58,6 @@
      <Compile Include="Assets\SKRIPT\TrapAction.cs" />
      <Compile Include="Assets\SKRIPT\SceneChange.cs" />
      <Compile Include="Assets\SKRIPT\TrapAction_MiceTrap.cs" />
-     <Compile Include="Assets\SKRIPT\highscore.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
