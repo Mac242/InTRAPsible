@@ -28,6 +28,8 @@ public class highscore : MonoBehaviour
         losePanel.SetActive(false);
         leaderboardNames[0].text = "Anna the Dev";
         leaderboardTime[0].text = "" + rank1 + " " + "seconds";
+        leaderboardNames[1].text = "Anna the Dev";
+        leaderboardTime[1].text = "" + rank2 + " " + "seconds";
         
     }
     
@@ -37,20 +39,19 @@ public class highscore : MonoBehaviour
         
         if (Player_CTRL.overallTime < rank1)
         {
-            leaderboardNames[0].text = submittedName.text;
             timeToBoard = (float) Math.Round(Player_CTRL.overallTime,2);
             leaderboardTime[0].text = "" + timeToBoard + "seconds";
             losePanel.SetActive(false);
-            rank1 = timeToBoard;
+            //rank1 = timeToBoard;
+            rank1 = PlayerPrefs.GetFloat("score", timeToBoard);
         }
-        
-        if (Player_CTRL.overallTime < rank2  && Player_CTRL.overallTime > rank1)
+
+        else if (Player_CTRL.overallTime < rank2  && Player_CTRL.overallTime > rank1)
         {
-            leaderboardNames[1].text =  submittedName.text;
             timeToBoard = (float) Math.Round(Player_CTRL.overallTime,2);
             leaderboardTime[1].text = "" + timeToBoard + "seconds";
             losePanel.SetActive(false);
-            rank2 = timeToBoard;
+            rank2 = PlayerPrefs.GetFloat("score", timeToBoard);
         }
 
       /*  if (Player_CTRL.overallTime >= rank1)
@@ -66,12 +67,16 @@ public class highscore : MonoBehaviour
         
         if (Player_CTRL.overallTime < rank1)
         {
-            PlayerPrefs.Save();
+            rank1 = PlayerPrefs.GetFloat("score", timeToBoard);
+            leaderboardNames[0].text = PlayerPrefs.GetString("name", submittedName.text);
+            leaderboardNames[0].text = "" + submittedName.text;
         }
         
         if (Player_CTRL.overallTime < rank2 && Player_CTRL.overallTime > rank1)
         {
-            PlayerPrefs.Save();
+            rank2 = PlayerPrefs.GetFloat("score", timeToBoard);
+            leaderboardNames[1].text = PlayerPrefs.GetString("name", submittedName.text);
+            leaderboardNames[1].text = "" + submittedName.text;
         }
         
     }
