@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f2d781f-5bf6-4f9c-9ec0-459016cfc316" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/SKRIPT/Highscore_List.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SKRIPT/Highscore_List.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InTRAPsible/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InTRAPsible/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SKRIPT/highscore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SKRIPT/highscore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SKRIPT/Player_CTRL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SKRIPT/Player_CTRL.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/3_Third Level_BasementScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/3_Third Level_BasementScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ShaderCache.db" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Search.settings" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Search.settings" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +122,7 @@
       <workItem from="1651733275391" duration="25396000" />
       <workItem from="1651911267480" duration="573000" />
       <workItem from="1652083060623" duration="9246000" />
+      <workItem from="1652168991779" duration="18719000" />
     </task>
     <servers />
   </component>

@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Player_CTRL : MonoBehaviour
 {   
@@ -43,6 +45,11 @@ public class Player_CTRL : MonoBehaviour
     public TextMeshProUGUI winTime;
 
     private LightAction _lightAction;
+    private SceneChange _sceneChange;
+    private Highscore_List _highscoreList;
+    private float highScoreSpot;
+
+    
     
 
     // Start is called before the first frame update
@@ -62,9 +69,12 @@ public class Player_CTRL : MonoBehaviour
         TrappedDarkness = false;
         PlayerIsTrapped = false;
         _lightAction = GetComponent<LightAction>();
+        _sceneChange = GetComponent<SceneChange>();
+        _highscoreList = GetComponent<Highscore_List>();
         Time.timeScale = 1;
         pausePanel.SetActive(false);
         paused = false;
+        
 
     }
     
@@ -232,7 +242,13 @@ public class Player_CTRL : MonoBehaviour
         {
             WIN();
         }
+
+        if (other.CompareTag("FinishScore"))
+        {
+            WIN();
+        }
     }
+     
     void DisplayTime()
     {
         time += Time.deltaTime;
@@ -276,7 +292,8 @@ public class Player_CTRL : MonoBehaviour
         //turn on WINPAnel
         WINPanel.SetActive(true);
         
-
+        
+        
     }
 
         //playAgainButton from the WINPanel
