@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class Player_CTRL : MonoBehaviour
@@ -47,7 +48,11 @@ public class Player_CTRL : MonoBehaviour
     private LightAction _lightAction;
     private SceneChange _sceneChange;
     private Highscore_List _highscoreList;
-    private float highScoreSpot;
+    [FormerlySerializedAs("_highscore")] public highscore highscore;
+    public TMP_Text overallTimeText;
+    private bool win;
+    
+    
 
     
     
@@ -71,10 +76,14 @@ public class Player_CTRL : MonoBehaviour
         _lightAction = GetComponent<LightAction>();
         _sceneChange = GetComponent<SceneChange>();
         _highscoreList = GetComponent<Highscore_List>();
+        
         Time.timeScale = 1;
         pausePanel.SetActive(false);
         paused = false;
-        
+        win = false;
+
+
+
 
     }
     
@@ -242,12 +251,25 @@ public class Player_CTRL : MonoBehaviour
         {
             WIN();
         }
-
-        if (other.CompareTag("FinishScore"))
+        
+        if(other.CompareTag ("FinishScore"))
         {
-            WIN();
+            win = true;
+            Time.timeScale = 0;
+            timeText.enabled = false;
+            _lightAction.batteriesLoadedText.enabled = false;
+            WINPanel.SetActive(true);
+            pausePanel.SetActive(false);
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Time.timeScale = 0;
+                pausePanel.SetActive(false);
+            }
+            
         }
     }
+    
+    
      
     void DisplayTime()
     {
@@ -259,10 +281,11 @@ public class Player_CTRL : MonoBehaviour
     
     public void WIN()
     {
+        win = true;
         Cursor.visible = true;
         //Make player disappear and be disabled
         Time.timeScale = 0;
-
+        
         if (time < 36f)
         {
             winPanelGold.SetActive(true);
@@ -292,8 +315,6 @@ public class Player_CTRL : MonoBehaviour
         //turn on WINPAnel
         WINPanel.SetActive(true);
         
-        
-        
     }
 
         //playAgainButton from the WINPanel
@@ -313,7 +334,7 @@ public class Player_CTRL : MonoBehaviour
 
     public void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && paused == false && win==false)
         {
             pausePanel.SetActive(true);
             Cursor.visible = true;
@@ -322,10 +343,11 @@ public class Player_CTRL : MonoBehaviour
             Debug.Log("Pause");
         }
         
-        else if (paused == true && Input.GetKeyDown(KeyCode.Escape))
+        else if (paused == true && Input.GetKeyDown(KeyCode.Escape) && win == false)
         {
             Unpause();
         }
+        
     }
 
     public void Unpause()

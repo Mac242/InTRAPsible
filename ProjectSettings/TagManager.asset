@@ -9,6 +9,7 @@ TagManager:
   - TrapFist
   - TrapOil
   - Light
+  - FinishScore
   layers:
   - Default
   - TransparentFX

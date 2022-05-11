@@ -11,7 +11,7 @@ public class Highscore_List : MonoBehaviour
         public List<float> _scores = new List<float>();
         public List<string> _scoreNames = new List<string>();
 
-        public List<TMP_Text> _mainMenuScores, _mainMenuNames, _gameScores, _gameNames;
+        public List<TMP_Text>  _gameScores, _gameNames;
 
         private float _highscoreToSet, _tempScore,  _highScoreSpot; 
         private string _tempName;
@@ -24,9 +24,19 @@ public class Highscore_List : MonoBehaviour
 
         private void Start()
         {
-            SetGameScoreBoard();
             LoadCheckIfNoScores();
             SetHighScore();
+            _defaultScores = 5000f;
+            _scores[0] = 73f;
+            _scores[1] = _defaultScores;
+            _scores[2] = _defaultScores;
+            _scores[3] = _defaultScores;
+            _scores[4] = _defaultScores;
+            _scores[5] = _defaultScores;
+            _scores[6] = _defaultScores;
+            _scores[7] = _defaultScores;
+            _scores[8] = _defaultScores;
+            _scores[9] = _defaultScores;
         }
 
         public void SetHighScore()
@@ -47,7 +57,7 @@ public class Highscore_List : MonoBehaviour
                     _scoreNameList = "ScoreName" + i;
                 
                     PlayerPrefs.SetFloat(_scoreList, _scores[i]);
-                    PlayerPrefs.SetString(_scoreNameList, _scoreNames[i].ToUpper());
+                    PlayerPrefs.SetString(_scoreNameList, _scoreNames[i]);
                 }
             }
         }
@@ -56,14 +66,10 @@ public class Highscore_List : MonoBehaviour
         {
             _scores.Clear();
             _scoreNames.Clear();
-
-            for (int i = 0; i < 10; i++)
-            {
-                _scoreList = "Score" + i;
-                _scoreNameList = "ScoreName" + i;
-                _scores.Add(PlayerPrefs.GetFloat(_scoreList));
-                _scoreNames.Add(PlayerPrefs.GetString(_scoreNameList));
-            }
+            
+            _scores.Add(PlayerPrefs.GetFloat(_scoreList));
+            _scoreNames.Add(PlayerPrefs.GetString(_scoreNameList));
+            
         }
 
         public void LoadCheckIfNoScores()
@@ -76,113 +82,110 @@ public class Highscore_List : MonoBehaviour
                     _scoreList = "Score" + i;
                     _scoreNameList = "ScoreName" + i;
                     PlayerPrefs.SetFloat(_scoreList, _defaultScores);
-                    PlayerPrefs.SetString(_scoreNameList, _defaultName.ToUpper());
+                    PlayerPrefs.SetString(_scoreNameList, _defaultName);
                 }
             }
         }
 
-       public float checkScore( float score)
+       public void checkScore()
         {
             LoadScores();
             _highscoreToSet = 5000f;
 
             for (int i = 0; i < _scores.Count; i++)
             {
-                if (score < _scores[i])
+                if (Player_CTRL.overallTime < _scores[i])
                 {
                     _highscoreToSet = i;
                     i = 10;
                 }
             }
-
-            return _highscoreToSet;
         }
        
 
         public void HighScoreToScore()
         {
-            checkScore(Player_CTRL.overallTime);
+            checkScore();
             
-            if (_tempScore < _scores[0])
+            if (Player_CTRL.overallTime < _scores[0])
             {
                 _scores[0] = Player_CTRL.overallTime;
                 _scoreNames[0] = _submittedName.text;
+                _gameNames[0].text = _scoreNames[0];
+                _scores[0] = (float) Math.Round(_scores[0], 2);
+                _gameScores[0].text = _scores[0].ToString();
+                PlayerPrefs.SetFloat(_scoreList, _scores[0]);
+                PlayerPrefs.SetString(_scoreNameList, _scoreNames[0]);
             }
             
-            if (Player_CTRL.overallTime <= _scores[1] && Player_CTRL.overallTime > _scores[0])
+            else if (Player_CTRL.overallTime <= _scores[1] && Player_CTRL.overallTime > _scores[0])
             {
                 _scores[1] = Player_CTRL.overallTime;
                 _scoreNames[1] = _submittedName.text;
+                _gameNames[1].text = _scoreNames[1];
+                _scores[1] = (float) Math.Round(_scores[1], 2);
+                _gameScores[1].text = _scores[1].ToString();
+                PlayerPrefs.SetFloat(_scoreList, _scores[1]);
+                PlayerPrefs.SetString(_scoreNameList, _scoreNames[1]);
             }
             
-            if (Player_CTRL.overallTime <= _scores[2] && Player_CTRL.overallTime > _scores[1])
+            else if (_highscoreToSet <= _scores[2] && _highscoreToSet > _scores[1])
             {
                 _scores[2] = Player_CTRL.overallTime;
                 _scoreNames[2] = _submittedName.text;
+                _gameNames[2].text = _scoreNames[2];
+                _scores[2] = (float) Math.Round(_scores[2], 2);
+                _gameScores[20].text = _scores[2].ToString();
+                PlayerPrefs.SetFloat(_scoreList, _scores[2]);
+                PlayerPrefs.SetString(_scoreNameList, _scoreNames[2]);
             }
-            if (Player_CTRL.overallTime <= _scores[3] && Player_CTRL.overallTime > _scores[2])
+            else if (_highscoreToSet <= _scores[3] && _highscoreToSet > _scores[2])
             {
                 _scores[3] = Player_CTRL.overallTime;
                 _scoreNames[3] = _submittedName.text;
+                _gameNames[3].text = _scoreNames[3];
+                _scores[3] = (float) Math.Round(_scores[3], 2);
+                _gameScores[3].text = _scores[3].ToString();
+                PlayerPrefs.SetFloat(_scoreList, _scores[3]);
+                PlayerPrefs.SetString(_scoreNameList, _scoreNames[3]);
             }
             
-            if (Player_CTRL.overallTime <= _scores[4] && Player_CTRL.overallTime > _scores[3])
+            else if (_highscoreToSet <= _scores[4] && _highscoreToSet > _scores[3])
             {
                 _scores[4] = Player_CTRL.overallTime;
                 _scoreNames[4] = _submittedName.text;
             }
             
-            if (Player_CTRL.overallTime <= _scores[5] && Player_CTRL.overallTime > _scores[4])
+            else if (_highscoreToSet <= _scores[5] && _highscoreToSet > _scores[4])
             {
                 _scores[5] = Player_CTRL.overallTime;
                 _scoreNames[5] = _submittedName.text;
             }
             
-            if (Player_CTRL.overallTime <= _scores[6] && Player_CTRL.overallTime > _scores[5])
+            else if (_highscoreToSet <= _scores[6] && _highscoreToSet > _scores[5])
             {
                 _scores[6] = Player_CTRL.overallTime;
                 _scoreNames[6] = _submittedName.text;
             }
             
-            if (Player_CTRL.overallTime <= _scores[7] && Player_CTRL.overallTime > _scores[6])
+            else if (_highscoreToSet <= _scores[7] && _highscoreToSet > _scores[6])
             {
                 _scores[7] = Player_CTRL.overallTime;
                 _scoreNames[7] = _submittedName.text;
             }
             
-            if (Player_CTRL.overallTime <= _scores[8] && Player_CTRL.overallTime > _scores[7])
+            else if (_highscoreToSet <= _scores[8] && _highscoreToSet > _scores[7])
             {
                 _scores[8] = Player_CTRL.overallTime;
                 _scoreNames[8] = _submittedName.text;
             }
             
-            if (Player_CTRL.overallTime <= _scores[9] && Player_CTRL.overallTime > _scores[8])
+            else if (_highscoreToSet <= _scores[9] && _highscoreToSet > _scores[8])
             {
                 _scores[9] = Player_CTRL.overallTime;
                 _scoreNames[9] = _submittedName.text;
             }
 
         }
-       
-        public void SetGameScoreBoard()
-        {
-            LoadScores();
-            int loop = 0;
-            foreach (TMP_Text score in _gameScores)
-            {
-                score.text = _scores[loop].ToString();
-                loop++;
-            }
-            
-            loop = 0;
-            foreach (TMP_Text name in _gameNames)
-            {
-                name.text = _scoreNames[loop];
-                loop++;
-            }
 
-            loop = 0;
-
-        }
-        
     }
