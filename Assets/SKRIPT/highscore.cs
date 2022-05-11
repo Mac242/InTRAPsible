@@ -38,10 +38,7 @@ public class highscore : MonoBehaviour
     {
         overallTimeText.text = "Your Time is" + " " + (float) Math.Round(Player_CTRL.overallTime,2);
         
-        if (Input.GetKey(KeyCode.Escape))
-        {
-         
-        }
+       
     }
     
     
@@ -355,6 +352,7 @@ public class highscore : MonoBehaviour
             leaderboardNames[9].text = leaderboardNames[10].text;
             leaderboardNames[10].text = "";
         }
+        
         /*if (Player_CTRL.overallTime < rank1)
         {
             timeToBoard = (float) Math.Round(Player_CTRL.overallTime,2);
@@ -407,6 +405,7 @@ public class highscore : MonoBehaviour
         leaderboardTime[7].text = "" + (float) Math.Round(rank8,2) + " " + "seconds";
         leaderboardTime[8].text = "" + (float) Math.Round(rank9,2)+ " " + "seconds";
         leaderboardTime[9].text = "" + (float) Math.Round(rank10,2) + " " + "seconds";
+        
         
 
     }
