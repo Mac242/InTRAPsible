@@ -37,8 +37,6 @@ public class highscore : MonoBehaviour
     private void Update()
     {
         overallTimeText.text = "Your Time is" + " " + (float) Math.Round(Player_CTRL.overallTime,2);
-        
-       
     }
     
     
@@ -55,19 +53,44 @@ public class highscore : MonoBehaviour
         nineth = false;
         tenth = false;
         
-        rank1 = 73f;
-        rank2 = 100f;
-        rank3 = 120f;
-        rank4 = 130f;
-        rank5 = 140f;
-        rank6 = 150f;
-        rank7 = 160f;
-        rank8 = 170f;
-        rank9 = 180f;
-        rank10 = 190f;
-        rank11 = Player_CTRL.overallTime;
+        rank1 = PlayerPrefs.GetFloat("Rank1", 73f);
+        rank2 = PlayerPrefs.GetFloat("Rank2", 100f); 
+        rank3 = PlayerPrefs.GetFloat("Rank3", 120f);
+        rank4 = PlayerPrefs.GetFloat("Rank4", 140f);
+        rank5 = PlayerPrefs.GetFloat("Rank5", 160f);
+        rank6 = PlayerPrefs.GetFloat("Rank6", 180f);
+        rank7 = PlayerPrefs.GetFloat("Rank7", 200f);
+        rank8 = PlayerPrefs.GetFloat("Rank8", 220f);
+        rank9 = PlayerPrefs.GetFloat("Rank9", 240f);
+        rank10 = PlayerPrefs.GetFloat("Rank10", 260f);
+        rank11 = Player_CTRL.overallTime; 
         
+       leaderboardNames[0].text = PlayerPrefs.GetString("leaderboardNames1", "SpeedrANNA");
+       leaderboardNames[1].text = PlayerPrefs.GetString("leaderboardNames2", "SpeedrANNA");
+       leaderboardNames[2].text = PlayerPrefs.GetString("leaderboardNames3", "SpeedrANNA");
+       leaderboardNames[3].text = PlayerPrefs.GetString("leaderboardNames4", "SpeedrANNA");
+       leaderboardNames[4].text = PlayerPrefs.GetString("leaderboardNames5", "SpeedrANNA");
+       leaderboardNames[5].text = PlayerPrefs.GetString("leaderboardNames6", "SpeedrANNA");
+       leaderboardNames[6].text = PlayerPrefs.GetString("leaderboardNames7", "SpeedrANNA");
+       leaderboardNames[7].text = PlayerPrefs.GetString("leaderboardNames8", "SpeedrANNA");
+       leaderboardNames[8].text = PlayerPrefs.GetString("leaderboardNames9", "SpeedrANNA");
+       leaderboardNames[9].text = PlayerPrefs.GetString("leaderboardNames10","SpeedrANNA");
         
+       /* if (scoreTime[0] == 0)
+        {
+            rank1 = 73f;
+            rank2 = 100f;
+            rank3 = 120f;
+            rank4 = 130f;
+            rank5 = 140f;
+            rank6 = 150f;
+            rank7 = 160f;
+            rank8 = 170f;
+            rank9 = 180f;
+            rank10 = 190f;
+            rank11 = Player_CTRL.overallTime;
+        }   */
+
         scoreTime[0] = rank1;
         scoreTime[1] = rank2;
         scoreTime[2] = rank3;
@@ -284,7 +307,7 @@ public class highscore : MonoBehaviour
              leaderboardNames[8].text = leaderboardNamesStorage[8];
              leaderboardNames[9].text = leaderboardNamesStorage[10];
              leaderboardNames[10].text = leaderboardNamesStorage[9];
-         }      
+         }                                                                                               
     }
     
     public void highscoreToBoard()
@@ -353,6 +376,18 @@ public class highscore : MonoBehaviour
             leaderboardNames[10].text = "";
         }
         
+        PlayerPrefs.SetString("leaderboardNames1", leaderboardNames[0].text);  
+        PlayerPrefs.SetString("leaderboardNames2", leaderboardNames[1].text);  
+        PlayerPrefs.SetString("leaderboardNames3", leaderboardNames[2].text);  
+        PlayerPrefs.SetString("leaderboardNames4", leaderboardNames[3].text);  
+        PlayerPrefs.SetString("leaderboardNames5", leaderboardNames[4].text);  
+        PlayerPrefs.SetString("leaderboardNames6", leaderboardNames[5].text);  
+        PlayerPrefs.SetString("leaderboardNames7", leaderboardNames[6].text);  
+        PlayerPrefs.SetString("leaderboardNames8", leaderboardNames[7].text);  
+        PlayerPrefs.SetString("leaderboardNames9", leaderboardNames[8].text);  
+        PlayerPrefs.SetString("leaderboardNames10", leaderboardNames[9].text); 
+        PlayerPrefs.Save();                                                    
+        
         /*if (Player_CTRL.overallTime < rank1)
         {
             timeToBoard = (float) Math.Round(Player_CTRL.overallTime,2);
@@ -406,7 +441,17 @@ public class highscore : MonoBehaviour
         leaderboardTime[8].text = "" + (float) Math.Round(rank9,2)+ " " + "seconds";
         leaderboardTime[9].text = "" + (float) Math.Round(rank10,2) + " " + "seconds";
         
-        
+        PlayerPrefs.SetFloat("Rank1", rank1);
+        PlayerPrefs.SetFloat("Rank2", rank2);   
+        PlayerPrefs.SetFloat("Rank3", rank3);   
+        PlayerPrefs.SetFloat("Rank4", rank4);   
+        PlayerPrefs.SetFloat("Rank5", rank5);   
+        PlayerPrefs.SetFloat("Rank6", rank6);   
+        PlayerPrefs.SetFloat("Rank7", rank7);   
+        PlayerPrefs.SetFloat("Rank8", rank8);   
+        PlayerPrefs.SetFloat("Rank9", rank9);   
+        PlayerPrefs.SetFloat("Rank10", rank10);
+        PlayerPrefs.Save();
 
     }
 
