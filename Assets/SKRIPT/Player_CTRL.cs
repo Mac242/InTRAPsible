@@ -95,7 +95,8 @@ public class Player_CTRL : MonoBehaviour
         overallTime += Time.deltaTime;
 
         if (!PlayerIsTrapped)
-        {   
+        {
+            jumpForce = 35f;
             horizontalInput = Input.GetAxisRaw("Horizontal");
             transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
             animator.SetBool("Trapped", false);
@@ -160,6 +161,8 @@ public class Player_CTRL : MonoBehaviour
             animator.SetBool("crouch", false);
             animator.SetBool("Jump", false);
             isOnGround = true;
+            horizontalInput = 0;
+            jumpForce = 0;
         }
 
         if (PlayerIsTrapped && TrappedDarkness==true)
