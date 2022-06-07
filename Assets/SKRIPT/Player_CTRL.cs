@@ -28,9 +28,7 @@ public class Player_CTRL : MonoBehaviour
     public bool TrappedFist ;
     public bool TrappedOil ;
     public bool TrappedDarkness ;
-    public AudioClip walkSound;
-    public AudioClip crouchSound;
-    public AudioSource _audioSource;
+    
     //Time
     public float time;
     public static float overallTime;
@@ -51,11 +49,13 @@ public class Player_CTRL : MonoBehaviour
     [FormerlySerializedAs("_highscore")] public highscore highscore;
     public TMP_Text overallTimeText;
     private bool win;
-    
-    
 
-    
-    
+
+    private void Awake()
+    {
+        PlayerIsTrapped = false;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -72,7 +72,7 @@ public class Player_CTRL : MonoBehaviour
         TrappedFist = false;
         TrappedOil = false;
         TrappedDarkness = false;
-        PlayerIsTrapped = false;
+        
         _lightAction = GetComponent<LightAction>();
         _sceneChange = GetComponent<SceneChange>();
         _highscoreList = GetComponent<Highscore_List>();
@@ -81,10 +81,7 @@ public class Player_CTRL : MonoBehaviour
         pausePanel.SetActive(false);
         paused = false;
         win = false;
-
-
-
-
+        
     }
     
 
@@ -150,7 +147,7 @@ public class Player_CTRL : MonoBehaviour
         if(Crouch)
         {
             transform.Translate(Vector2.right * Time.deltaTime * Crouchspeed * horizontalInput);
-            _audioSource.Stop();
+            
         }
         
         if(PlayerIsTrapped)
@@ -193,23 +190,7 @@ public class Player_CTRL : MonoBehaviour
             isOnGround = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            _audioSource.Play();
-        }
-        if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            _audioSource.Stop();
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            _audioSource.Play();
-        }
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            _audioSource.Stop();
-        }
+       
     }
     void FixedUpdate()
     {

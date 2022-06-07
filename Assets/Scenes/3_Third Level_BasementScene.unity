@@ -2418,7 +2418,7 @@ GameObject:
   - component: {fileID: 190195731}
   m_Layer: 0
   m_Name: Respawn Point4
-  m_TagString: Untagged
+  m_TagString: MarkerReset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2509,7 +2509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190195730}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.38, y: 10.03, z: 0}
+  m_LocalPosition: {x: 17.38, y: 15.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12395,12 +12395,12 @@ PrefabInstance:
     - target: {fileID: 6747357811294953385, guid: 8aa6370913525a74f89a557e87a652ec,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -297
+      value: -297.00006
       objectReference: {fileID: 0}
     - target: {fileID: 6747357811294953385, guid: 8aa6370913525a74f89a557e87a652ec,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.3306885
+      value: -5.330719
       objectReference: {fileID: 0}
     - target: {fileID: 6747357811294953385, guid: 8aa6370913525a74f89a557e87a652ec,
         type: 3}
@@ -25956,6 +25956,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4363537584852321407, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.6960449
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363537584852321407, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.7660217
+      objectReference: {fileID: 0}
     - target: {fileID: 4486588919225346763, guid: a3696ec745f1d4626bc3c3b5f98a417b,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -25971,10 +25981,20 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4589940638484293905, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.7660217
+      objectReference: {fileID: 0}
     - target: {fileID: 5015249803054527502, guid: a3696ec745f1d4626bc3c3b5f98a417b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500063479528879043, guid: a3696ec745f1d4626bc3c3b5f98a417b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.7656555
       objectReference: {fileID: 0}
     - target: {fileID: 5772958918519150978, guid: a3696ec745f1d4626bc3c3b5f98a417b,
         type: 3}
@@ -26127,7 +26147,7 @@ GameObject:
   - component: {fileID: 1286707018}
   m_Layer: 0
   m_Name: INtrapSIBLE_EXIT
-  m_TagString: Untagged
+  m_TagString: FinishScore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49846,7 +49866,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7784091, y: 1}
+    m_SensorSize: {x: 1.7785715, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -56865,6 +56885,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 101854638777049678, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5277297744122787079, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
       propertyPath: m_SortingLayer
@@ -57045,7 +57070,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -7.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 101854638777049678, guid: 81aa6c902b03a4637a0efea670ac834c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 81aa6c902b03a4637a0efea670ac834c, type: 3}
 --- !u!1001 &7228393827617161567
 PrefabInstance:
