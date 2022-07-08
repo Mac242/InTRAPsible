@@ -8,7 +8,7 @@ public class TrapAction_STEAM : MonoBehaviour
     public GameObject MarkerReset;
     public ParticleSystem TrapParticleSystem;
     private Player_CTRL Player_CTRL;
-    //public AudioSource _audioSource;
+    [SerializeField] AudioSource _audioSource;
     public GameObject Hit;
     public GameObject hit2;
     public GameObject tutorialHit;
@@ -56,7 +56,7 @@ public class TrapAction_STEAM : MonoBehaviour
             Player_CTRL.PlayerIsTrapped = true;
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
-            //_audioSource.Play();
+            _audioSource.Play();
             
         }
     }
@@ -107,7 +107,7 @@ void trapDefenseFinished()
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
-            //_audioSource.Stop();
+            _audioSource.Stop();
             Player_CTRL.isOnGround = true;
         }
         else

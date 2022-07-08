@@ -19,6 +19,7 @@ public class LightAction : MonoBehaviour
     private Player_CTRL Player_Ctrl;
     public GameObject globalLight;
     public Slider brightnessSlider;
+    [SerializeField] AudioSource _audioSource;
     
     
     //booleans
@@ -60,7 +61,8 @@ public class LightAction : MonoBehaviour
         flashlight.SetActive(false);
         darkness.SetActive(true);
         flashlightOn = false;
-        
+        inTheLight = true;
+
     }
 
     void Update()
@@ -73,10 +75,13 @@ public class LightAction : MonoBehaviour
         if (trapDefenseLaunchedb) trapDefenseLaunched();
         if (trapDefenseFinishedb) trapDefenseFinished();
         
+        
         if (triggersIn==0)
         {
             trapActivatedb = true;
             Debug.Log("DARK");
+            
+            //_audioSource.Play();
         }
 
         if (batteriesLoad <= 0 && flashlightOn==true)
@@ -150,6 +155,7 @@ public class LightAction : MonoBehaviour
         else
         {
             inTheLight = false;
+            
         }
     }
     
@@ -165,6 +171,7 @@ public class LightAction : MonoBehaviour
             Player_Ctrl.PlayerIsTrapped = true;
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
+            inTheLight = false;
         }
     }
 
@@ -182,6 +189,10 @@ public class LightAction : MonoBehaviour
             hit.SetActive(true);
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
+            
+            _audioSource.Play();
+            Debug.Log("PLAY");
+            
             trapDefenseLaunchedb = false;
             trapDefenseFinishedb = true;
             //}
@@ -189,6 +200,8 @@ public class LightAction : MonoBehaviour
         else
         {
             trapDefenseLaunchedTimer -= Time.deltaTime;
+            
+
         }
     }
 
@@ -204,9 +217,13 @@ public class LightAction : MonoBehaviour
             Player_Ctrl.PlayerIsTrapped = false;
             Player_Ctrl.TrappedDarkness = false;
             Player_Ctrl.isOnGround = true;
-            
+            //_audioSource.Stop();
             trapDefenseFinishedb = false;
             //TrapParticleSystem.Stop();
+            
+            _audioSource.Stop();
+            Debug.Log("STOP");
+            
             hit.SetActive(false);
             trapActivatedTimer = -1f;
             trapDefenseLaunchedTimer = -0.5f;

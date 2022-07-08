@@ -834,6 +834,11 @@ PrefabInstance:
       objectReference: {fileID: 454031192}
     - target: {fileID: 101854638777049678, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1549905252}
+    - target: {fileID: 101854638777049678, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
       propertyPath: brightnessSlider
       value: 
       objectReference: {fileID: 1074169414}
@@ -1012,7 +1017,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -7.15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4337952846489577588, guid: 81aa6c902b03a4637a0efea670ac834c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 81aa6c902b03a4637a0efea670ac834c, type: 3}
 --- !u!1 &454031192
 GameObject:
@@ -2391,7 +2397,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7768362, y: 1}
+    m_SensorSize: {x: 1.7785715, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10158,6 +10164,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2061772761335114911, guid: 7c93ec68b31134e9e9830c60235e6036,
     type: 3}
   m_PrefabInstance: {fileID: 2061772761962517094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1549905252 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1751394249043621497, guid: 81aa6c902b03a4637a0efea670ac834c,
+    type: 3}
+  m_PrefabInstance: {fileID: 431489193}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1569873177
 GameObject:

@@ -10,6 +10,8 @@ public class TrapAction_MiceTrap : MonoBehaviour
     private Player_CTRL Player_CTRL;
     [SerializeField] private GameObject tutorialTrap;
     [SerializeField] private GameObject hitTrap;
+
+    [SerializeField] AudioSource _audioSource;
     
     
     //public AudioSource _audioSource;
@@ -57,7 +59,7 @@ public class TrapAction_MiceTrap : MonoBehaviour
             Player_CTRL.PlayerIsTrapped = true;
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
-           // _audioSource.Play();
+            _audioSource.Play();
             
         }
     }
@@ -106,7 +108,7 @@ void trapDefenseFinished()
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
-            //_audioSource.Stop();
+            _audioSource.Stop();
             Player_CTRL.isOnGround = true;
         }
         else

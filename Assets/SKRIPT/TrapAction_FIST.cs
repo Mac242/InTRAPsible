@@ -11,7 +11,7 @@ public class TrapAction_FIST : MonoBehaviour
     public GameObject Hit;
    // public AudioClip hitSwing;
   // public AudioClip hitUff;
-  // public AudioSource _audioSource;
+  [SerializeField] AudioSource _audioSource;
     
     
     
@@ -57,7 +57,7 @@ public class TrapAction_FIST : MonoBehaviour
             Player_CTRL.TrappedFist = true;
             trapActivatedb = false;
             trapDefenseLaunchedb = true;
-           // _audioSource.Play();
+            _audioSource.Play();
         }
     }
 
@@ -103,7 +103,7 @@ void trapDefenseFinished()
             trapActivatedTimer = -0.5f;
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
-           // _audioSource.Stop();
+            _audioSource.Stop();
            Player_CTRL.isOnGround = true;
             
         }
