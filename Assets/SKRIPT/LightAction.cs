@@ -29,6 +29,8 @@ public class LightAction : MonoBehaviour
     public bool flashlightOn = false;
     public bool inTheLight;
     public bool exitTrigger;
+    private float activateTraps;
+    public bool activatedTraps;
     
     
     //Variables for function
@@ -55,6 +57,7 @@ public class LightAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(inTheLight);
         Player_Ctrl = player.GetComponent<Player_CTRL>();
         hit.SetActive(false);
         //triggersIn = 0;
@@ -62,12 +65,26 @@ public class LightAction : MonoBehaviour
         darkness.SetActive(true);
         flashlightOn = false;
         inTheLight = true;
-
+        Player_Ctrl.PlayerIsTrapped = false;
+        activateTraps = 0.5f;
+        activatedTraps = false;
     }
 
     void Update()
     {
-        batteriesLoadRounded = (float) Math.Round(batteriesLoad,1);
+        if (activateTraps > 0)
+        {
+            activateTraps -= Time.deltaTime;
+        }
+        
+        if (activateTraps <= 0)
+        {
+            activatedTraps = true;
+            Debug.Log(activatedTraps);
+            Debug.Log(activateTraps);
+        }
+
+            batteriesLoadRounded = (float) Math.Round(batteriesLoad,1);
         //flashlightsNumberText.text = "Lights:" + " " + flashlightsNumber;
         batteriesLoadedText.text = "Batterie" + " " + batteriesLoadRounded;
         
@@ -76,7 +93,7 @@ public class LightAction : MonoBehaviour
         if (trapDefenseFinishedb) trapDefenseFinished();
         
         
-        if (triggersIn==0)
+        if (triggersIn==0 && activatedTraps==true)
         {
             trapActivatedb = true;
             Debug.Log("DARK");
