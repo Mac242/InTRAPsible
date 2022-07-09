@@ -599,10 +599,12 @@ MonoBehaviour:
   hit: {fileID: 0}
   globalLight: {fileID: 0}
   brightnessSlider: {fileID: 0}
-  _audiosource: {fileID: 0}
+  _audioSource: {fileID: 0}
+  _audioSourceClick: {fileID: 0}
   flashlightOn: 0
   inTheLight: 0
   exitTrigger: 0
+  activatedTraps: 0
   trapActivatedTimer: -0.5
   trapDefenseLaunchedTimer: -0.5
   trapDefenseFinishedTimer: 1
@@ -744,10 +746,12 @@ MonoBehaviour:
   hit: {fileID: 0}
   globalLight: {fileID: 0}
   brightnessSlider: {fileID: 0}
-  _audiosource: {fileID: 0}
+  _audioSource: {fileID: 0}
+  _audioSourceClick: {fileID: 0}
   flashlightOn: 0
   inTheLight: 0
   exitTrigger: 0
+  activatedTraps: 0
   trapActivatedTimer: -0.5
   trapDefenseLaunchedTimer: -0.5
   trapDefenseFinishedTimer: 1
@@ -767,16 +771,16 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ef95018c8e94bd949b2082c5a650fdb0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a8015a8a74c7a7646857417e1f014cc8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.035
+  m_Pitch: 0.65
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
+  Priority: 52
+  DopplerLevel: 1.46
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -828,7 +832,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.59166664
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -49,11 +49,13 @@ public class Audio : MonoBehaviour
 
         if (_playerCtrl.PlayerIsTrapped == true)
         {
-            heartbeatSourceSound.pitch = 1.5f;
+            heartbeatSourceSound.pitch = 1.8f;
+            heartbeatSourceSound.volume = 1f;
         }
         else
         {
             heartbeatSourceSound.pitch = 1.0f;
+            heartbeatSourceSound.volume = 0.5f;
         }
     }
 }

@@ -22,6 +22,8 @@ public class TrapAction_V2 : MonoBehaviour
     float trapDefenseFinishedTimer = 1.0f;
 
     private LightAction _lightAction;
+
+    [SerializeField] private AudioSource _audioSource;
     
     // Start is called before the first frame update
     void Start()
@@ -82,6 +84,8 @@ void trapDefenseLaunched()
                 _lightAction.flashlightOn = false;
             }*/
                
+               _audioSource.Play();
+               
             //if (Player.transform.position == MarkerReset.transform.position)
             //{
                 trapDefenseLaunchedb = false;
@@ -112,6 +116,8 @@ void trapDefenseFinished()
             trapDefenseLaunchedTimer = -0.5f;
             trapDefenseFinishedTimer = 2.0f;
             Player_CTRL.isOnGround = true;
+            
+            _audioSource.Stop();
         }
         else
         {

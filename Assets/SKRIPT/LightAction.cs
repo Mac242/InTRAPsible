@@ -20,6 +20,7 @@ public class LightAction : MonoBehaviour
     public GameObject globalLight;
     public Slider brightnessSlider;
     [SerializeField] AudioSource _audioSource;
+    [SerializeField] AudioSource _audioSourceClick;
     
     
     //booleans
@@ -122,6 +123,7 @@ public class LightAction : MonoBehaviour
                 darkness.SetActive(false);
                 triggersIn += 1;
                 Debug.Log("E pressed");
+                _audioSourceClick.Play();
             }
 
             
@@ -134,6 +136,7 @@ public class LightAction : MonoBehaviour
                 darkness.SetActive(true);
                 triggersIn -= 1;
                 Debug.Log("unpressed E");
+                _audioSourceClick.Play();
             }
         }
         
