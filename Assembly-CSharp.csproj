@@ -339,9 +339,6 @@
      <Reference Include="Unity.Burst.Cecil.Rocks">
      <HintPath>D:\Documents\GitHub\InTRAPsible\Library\PackageCache\com.unity.burst@1.6.4\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
      </Reference>
-     <Reference Include="clipper_library">
-     <HintPath>D:\Documents\GitHub\InTRAPsible\Library\PackageCache\com.unity.cinemachine@2.8.4\Runtime\ThirdParty\clipper_library.dll</HintPath>
-     </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.18f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
      </Reference>

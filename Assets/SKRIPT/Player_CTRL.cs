@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -8,9 +9,15 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.Video;
+using Debug = UnityEngine.Debug;
 
 public class Player_CTRL : MonoBehaviour
-{   
+{
+    public VideoPlayer VideoPlayer1;
+    public VideoPlayer VideoPlayer2;
+    public VideoPlayer VideoPlayer3;
+    
     public float speed = 2f; 
     public float Crouchspeed = -1f; 
     private float horizontalInput; 
@@ -270,6 +277,7 @@ public class Player_CTRL : MonoBehaviour
         //Make player disappear and be disabled
         Time.timeScale = 0;
         
+        
         if (time < 36f)
         {
             winPanelGold.SetActive(true);
@@ -278,6 +286,8 @@ public class Player_CTRL : MonoBehaviour
             winTime.text = "You run this basement in " + string.Format("{0:00}:{1:00}", minutes , seconds);
             //LightAction.flashlightsNumber += 3;
             LightAction.batteriesLoad += 5f;
+           
+            VideoPlayer1.Play();
         }
         else if (time < 60f && time >= 36f)
         {
@@ -286,6 +296,8 @@ public class Player_CTRL : MonoBehaviour
             float seconds = Mathf.FloorToInt(time % 60);
             winTime.text = "You walked this basement in " + string.Format("{0:00}:{1:00}", minutes , seconds);
             LightAction.batteriesLoad += 3f;
+            
+            VideoPlayer2.Play();
         }
         else if (time >= 60f)
         {
@@ -294,6 +306,8 @@ public class Player_CTRL : MonoBehaviour
             float seconds = Mathf.FloorToInt(time % 60);
             winTime.text = "You escaped this basement in " + string.Format("{0:00}:{1:00}", minutes , seconds);
             LightAction.batteriesLoad += 1f;
+            
+            VideoPlayer3.Play();
         }
         
         //turn on WINPAnel
