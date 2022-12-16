@@ -39720,6 +39720,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0291ce92c4144f2488c9e3e1582ea2e, type: 3}
+--- !u!1 &1355755007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7001666846100568369, guid: e0291ce92c4144f2488c9e3e1582ea2e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1355755006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1355755008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7001666844946535088, guid: e0291ce92c4144f2488c9e3e1582ea2e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1355755006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1355755009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7001666846294146466, guid: e0291ce92c4144f2488c9e3e1582ea2e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1355755006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1356285940
 GameObject:
   m_ObjectHideFlags: 0
@@ -50499,7 +50517,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7785715, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -57754,9 +57772,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 1355755009}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
       propertyPath: TrappedLight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: globalLight1
+      value: 
+      objectReference: {fileID: 1355755008}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: globalLight2
+      value: 
+      objectReference: {fileID: 1355755007}
     - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
       propertyPath: winPanelGold

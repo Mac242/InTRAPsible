@@ -1059,6 +1059,11 @@ PrefabInstance:
       objectReference: {fileID: 1715634215}
     - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 1856578679}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
       propertyPath: TrappedLight
       value: 0
       objectReference: {fileID: 0}
@@ -1077,6 +1082,16 @@ PrefabInstance:
       propertyPath: VideoPlayer3
       value: 
       objectReference: {fileID: 112788543}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: globalLight1
+      value: 
+      objectReference: {fileID: 1528270623}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: globalLight2
+      value: 
+      objectReference: {fileID: 1528270623}
     - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
       propertyPath: winPanelGold
@@ -10633,6 +10648,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2061772761962517094}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1528270623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6246540641253919849, guid: af31b974d95564c6ca2cfccbb65c528c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1134015476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1549905252 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1751394249043621497, guid: 81aa6c902b03a4637a0efea670ac834c,
@@ -11554,6 +11575,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!1 &1856578679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 532479079353293051, guid: af31b974d95564c6ca2cfccbb65c528c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1134015476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1892717358
 GameObject:
   m_ObjectHideFlags: 0
