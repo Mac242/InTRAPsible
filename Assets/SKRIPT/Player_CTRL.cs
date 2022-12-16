@@ -5,6 +5,7 @@ using System.Diagnostics;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -56,6 +57,10 @@ public class Player_CTRL : MonoBehaviour
     [FormerlySerializedAs("_highscore")] public highscore highscore;
     public TMP_Text overallTimeText;
     private bool win;
+    
+    public GameObject globalLight;
+    public GameObject globalLight1;
+    public GameObject globalLight2;
 
 
     private void Awake()
@@ -88,7 +93,7 @@ public class Player_CTRL : MonoBehaviour
         pausePanel.SetActive(false);
         paused = false;
         win = false;
-        
+
     }
     
 
@@ -241,6 +246,9 @@ public class Player_CTRL : MonoBehaviour
         if(other.CompareTag ("Finish"))
         {
             WIN();
+            globalLight.GetComponent<Light2D>().intensity = 0;
+            globalLight1.GetComponent<Light2D>().intensity = 0;
+            globalLight2.GetComponent<Light2D>().intensity = 0;
         }
         
         if(other.CompareTag ("FinishScore"))

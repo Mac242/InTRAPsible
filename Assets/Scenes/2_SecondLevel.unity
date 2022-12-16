@@ -842,6 +842,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f23a0e9c270424b89a1b7875990bcd0c, type: 3}
+--- !u!1 &174288255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7001666844946535088, guid: e0291ce92c4144f2488c9e3e1582ea2e,
+    type: 3}
+  m_PrefabInstance: {fileID: 322670577}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &177672825 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 532001166102040664, guid: 1b25401ce86ba480a84470671b7af1dc,
@@ -5009,6 +5015,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.162}
+--- !u!1 &600262146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7001666846294146466, guid: e0291ce92c4144f2488c9e3e1582ea2e,
+    type: 3}
+  m_PrefabInstance: {fileID: 322670577}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &612050426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5566,6 +5578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 600262146}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
       propertyPath: TrappedLight
       value: 0
       objectReference: {fileID: 0}
@@ -5584,6 +5601,16 @@ PrefabInstance:
       propertyPath: VideoPlayer3
       value: 
       objectReference: {fileID: 1331693207}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: globalLight1
+      value: 
+      objectReference: {fileID: 174288255}
+    - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
+        type: 3}
+      propertyPath: globalLight2
+      value: 
+      objectReference: {fileID: 1597557229}
     - target: {fileID: 5277297746086367214, guid: 81aa6c902b03a4637a0efea670ac834c,
         type: 3}
       propertyPath: winPanelGold
@@ -13102,6 +13129,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1597557229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7001666846100568369, guid: e0291ce92c4144f2488c9e3e1582ea2e,
+    type: 3}
+  m_PrefabInstance: {fileID: 322670577}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1658371207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8660898132328854548, guid: 6463b43f7ba0d29458237e80981a5ede,

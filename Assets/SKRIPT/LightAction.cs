@@ -175,7 +175,6 @@ public class LightAction : MonoBehaviour
         else
         {
             inTheLight = false;
-            
         }
     }
     
@@ -220,8 +219,6 @@ public class LightAction : MonoBehaviour
         else
         {
             trapDefenseLaunchedTimer -= Time.deltaTime;
-            
-
         }
     }
 
